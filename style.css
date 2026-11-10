@@ -352,7 +352,6 @@ body { background: radial-gradient(1200px 700px at 75% -10%, var(--halo-haut), t
 .dm-time { color: var(--discord-heure); font-size: .75rem; }
 .dm-embed { margin-top: 6px; background: var(--discord-embed); border-left: 4px solid var(--red); border-radius: 4px; padding: 10px 12px; }
 .dm-embed p { margin: 4px 0 0; color: var(--discord-texte); }
-.mention { background: var(--discord-bleu-4d); color: var(--discord-mention); border-radius: 3px; padding: 0 2px; }
 .note { margin-top: 10px; background: var(--red-soft); border: 1px solid var(--red-55); border-radius: 12px; padding: 14px 18px; }
 
 /* ---------- Nouveautés ---------- */
@@ -477,17 +476,8 @@ body { background: radial-gradient(1200px 700px at 75% -10%, var(--halo-haut), t
 }
 
 /* ---------- Mobile ---------- */
+/* Le menu ☰ lui-même est réglé plus bas (il s'ouvre dès 1120 px) */
 @media (max-width: 920px) {
-  .menu-btn { display: block; }
-  .links {
-    position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; align-items: stretch;
-    background: var(--bg-f2); border-bottom: 1px solid var(--line); display: none; padding: 8px 16px 16px;
-  }
-  .links.open { display: flex; }
-  .links a:not(.btn) { padding: 12px 4px; border-bottom: 1px solid var(--line); }
-  .links a[aria-current="page"]::after { display: none; }
-  .links .pill.show { align-self: flex-start; margin-top: 12px; }
-  .links .btn { margin-top: 12px; }
   .split { grid-template-columns: 1fr; }
   .counters { grid-template-columns: repeat(2, 1fr); }
   .cmd-list { grid-template-columns: 1fr; }
