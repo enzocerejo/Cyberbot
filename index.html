@@ -27,7 +27,7 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="preload" href="assets/polices/orbitron-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=7a0ddb4d">
+  <link rel="stylesheet" href="style.css?v=58e9ad6d">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Cyber", "applicationCategory": "CommunicationApplication", "operatingSystem": "Discord", "url": "https://cyberbot.fr/", "image": "https://cyberbot.fr/assets/og-image.jpg", "description": "Cyber protège et anime ton serveur Discord : modération, automod, niveaux, tickets, giveaways, vérification et outils réseau. 100 % gratuit.", "inLanguage": "fr", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "author": {"@type": "Person", "name": "Enzo Cerejo"}}</script>
 </head>
 <body>
@@ -100,7 +100,7 @@
       <p class="lead">Deux modules de base, actifs dès l'arrivée : <b>Communauté</b> et <b>Sécurité</b>, pour remplacer MEE6, Carl-bot, Dyno et Ticket Tool. Et des <a href="#modules">modules en plus</a> à ajouter quand tu veux.</p>
       <div class="bento">
         <article class="card big">
-          <span class="ico">🛡️</span>
+          <span class="ico" aria-hidden="true">🛡️</span>
           <h3>Modération complète</h3>
           <p>Kick, ban, mute temporaire, avertissements, nettoyage de messages, verrouillage de salons. Chaque sanction est envoyée en MP au membre et enregistrée dans les logs, avec vérification de la hiérarchie des rôles.</p>
           <div class="term">
@@ -109,7 +109,7 @@
           </div>
         </article>
         <article class="card tall">
-          <span class="ico">🤖</span>
+          <span class="ico" aria-hidden="true">🤖</span>
           <h3>Automod</h3>
           <p>Supprime tout seul le spam, les invitations, les liens, les insultes, l'abus de majuscules et les mentions de masse.</p>
           <ul class="mini-list">
@@ -121,34 +121,34 @@
           </ul>
         </article>
         <article class="card">
-          <span class="ico">📈</span>
+          <span class="ico" aria-hidden="true">📈</span>
           <h3>Niveaux & XP</h3>
           <p>XP en discutant, classement et rôles récompenses automatiques.</p>
           <div class="xpbar"><span></span></div>
           <small class="muted-s">Niveau 12 · 1 840 / 2 400 XP</small>
         </article>
         <article class="card">
-          <span class="ico">🎫</span>
+          <span class="ico" aria-hidden="true">🎫</span>
           <h3>Tickets</h3>
           <p>Un bouton ouvre un salon privé avec ton équipe. La conversation est sauvegardée à la fermeture.</p>
         </article>
         <article class="card">
-          <span class="ico">🎉</span>
+          <span class="ico" aria-hidden="true">🎉</span>
           <h3>Giveaways</h3>
           <p>Bouton de participation, tirage automatique, relance du tirage.</p>
         </article>
         <article class="card">
-          <span class="ico">✅</span>
+          <span class="ico" aria-hidden="true">✅</span>
           <h3>Anti-raid</h3>
           <p>Vérification par bouton. Les comptes de moins de 24 h sont bloqués.</p>
         </article>
         <article class="card">
-          <span class="ico">👋</span>
+          <span class="ico" aria-hidden="true">👋</span>
           <h3>Accueil & rôles</h3>
           <p>Bienvenue personnalisée, rôle automatique, rôles à boutons, vocaux temporaires.</p>
         </article>
         <article class="card module-pub">
-          <span class="ico">🧩</span>
+          <span class="ico" aria-hidden="true">🧩</span>
           <h3>Modules en plus</h3>
           <p>Ajoute des fonctions à la carte depuis le tableau de bord, ou demande un module codé exprès pour ton serveur.</p>
           <a class="btn ghost small" href="#modules">Voir les modules →</a>
@@ -218,14 +218,14 @@
       <p class="lead">La base (Communauté + Sécurité) est toujours là. Le reste, tu le choisis dans l'onglet <b>Modules publics</b> du tableau de bord.</p>
       <div class="modules-vitrine">
         <article class="card module-carte">
-          <span class="ico">🧩</span>
+          <span class="ico" aria-hidden="true">🧩</span>
           <span class="module-badge">Dans le tableau de bord</span>
           <h3>Modules publics</h3>
           <p>Les modules installés sur ton serveur d'un côté, la recherche de l'autre : les plus installés, les mieux notés (note de 1 à 5), les nouveautés, une recherche par nom ou par identifiant, et le support si tu ne trouves pas.</p>
           <a class="btn ghost" href="panel/">Ouvrir le tableau de bord →</a>
         </article>
         <article class="card module-carte">
-          <span class="ico">📼</span>
+          <span class="ico" aria-hidden="true">📼</span>
           <span class="module-badge">Bientôt</span>
           <h3>Modules sur mesure</h3>
           <p>Une fonction qui n'existe nulle part ? Elle est codée pour ton serveur, tu reçois un code unique et tu l'ajoutes depuis le tableau de bord, comme une cassette qu'on insère.</p>
@@ -367,6 +367,13 @@
 
   <script src="config.js?v=a596832e"></script>
   <script src="commandes.js?v=9313fdc8"></script>
-  <script src="script.js?v=2cd94e53"></script>
+  <script src="js/commun.js?v=b4479c25"></script>
+  <script src="js/liste-commandes.js?v=e662366d"></script>
+  <script src="js/effets.js?v=6880e65e"></script>
+  <script src="js/statut.js?v=4989bae7"></script>
+  <script src="js/captures.js?v=285cc63f"></script>
+  <script src="js/fond.js?v=d61157d8"></script>
+  <script src="js/demo.js?v=6b465c86"></script>
+  <script src="js/visite.js?v=d9acf2ff"></script>
 </body>
 </html>
