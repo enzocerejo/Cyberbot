@@ -134,7 +134,7 @@ body { background: radial-gradient(1200px 700px at 75% -10%, #3a0a1433, transpar
 .demo-channel { font-weight: 700; color: #dbdee1; }
 .demo-live { margin-left: auto; color: var(--red2); font-size: .72rem; font-weight: 800; letter-spacing: 1px; animation: blink 1.6s infinite; }
 .demo-feed { height: 380px; overflow: hidden; padding: 14px 16px; display: flex; flex-direction: column; justify-content: flex-end; gap: 12px; }
-.demo-input { margin: 0 14px 14px; background: #383a40; border-radius: 8px; padding: 10px 14px; color: #8e9297; font-size: .9rem; min-height: 42px; }
+.demo-input { margin: 0 14px 14px; background: #383a40; border-radius: 8px; padding: 10px 14px; color: #b5bac1; font-size: .9rem; min-height: 42px; }
 .demo-input.typing { color: #dbdee1; }
 .demo-input.typing span::after { content: "▍"; color: var(--red2); animation: blink 1s infinite; }
 .msg { display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 12px; animation: msg-in .35s ease both; }
@@ -206,7 +206,7 @@ body { background: radial-gradient(1200px 700px at 75% -10%, #3a0a1433, transpar
 .cat { background: var(--card-solid); border: 1px solid var(--line); color: var(--mut); border-radius: 30px; padding: 7px 14px; font: inherit; font-weight: 600; cursor: pointer; }
 .cat:hover { color: var(--txt); }
 .cat.active { background: var(--red-soft); border-color: var(--red); color: var(--red2); }
-.cat small { opacity: .7; margin-left: 4px; }
+.cat small { opacity: .85; margin-left: 4px; }
 .cmd-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
 .cmd { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; backdrop-filter: blur(6px); transition: border-color .2s; animation: appear .3s ease both; }
 .cmd:hover { border-color: #ff3d5a55; }
