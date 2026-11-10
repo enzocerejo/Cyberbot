@@ -15,14 +15,26 @@ if errorlevel 1 (
 if not exist ".git" (
   echo Premiere publication : connexion du dossier au depot GitHub...
   git init -b main >nul
-  git remote add origin https://github.com/enzocerejo/Cyber.git
+  git remote add origin https://github.com/enzocerejo/Cyberbot.git
   git config user.name "Enzo Cerejo"
   git config user.email "enzocerejo@users.noreply.github.com"
   git fetch origin main
   if not errorlevel 1 git reset --soft origin/main >nul
 )
 
+rem Le depot a ete renomme Cyber -> Cyberbot : on met l'adresse a jour
+git remote set-url origin https://github.com/enzocerejo/Cyberbot.git
+
 git add -A
+rem Securite : bloque l'envoi si un token Discord, une cle API ou un token de tunnel trainait dans le site
+git grep --cached -qE "[MNO][A-Za-z0-9_-]{23,27}\.[A-Za-z0-9_-]{6}\.[A-Za-z0-9_-]{27,}|sk-ant-[A-Za-z0-9_-]{10,}|github_pat_[A-Za-z0-9_]{20,}|eyJhIjoi[A-Za-z0-9+/=_-]{40,}"
+if not errorlevel 1 (
+  git reset -q
+  echo [X] ARRET : un secret ^(token ou cle^) est dans un fichier du site. Rien n'a ete envoye.
+  echo     Retire-le du fichier puis relance PUBLIER.bat, ou demande a Claude.
+  pause
+  exit /b
+)
 git diff --cached --quiet
 if errorlevel 1 goto commit
 rem Rien de nouveau dans le dossier : reste-t-il une mise a jour deja enregistree mais pas encore envoyee ?
