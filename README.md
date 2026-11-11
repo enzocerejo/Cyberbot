@@ -10,8 +10,11 @@ Site du bot Discord **Cyber**, hébergé avec GitHub Pages : https://cyberbot.fr
 - `nouveautes.html` : statut en direct et historique des versions
 - `conditions.html` et `confidentialite.html` : pages légales
 
+Les pages HTML sont générées : on modifie `outils/site/*.main.html` dans le dépôt du bot puis on lance `python outils/site/build.py` (même en-tête et même pied de page partout).
+
 ## Fichiers
-- `style.css` : le design · `script.js` : menu, recherche, animations, statut
+- `style.css` : le design (toutes les couleurs sont des variables en haut du fichier, dans `:root`)
+- `js/` : les scripts, chargés dans cet ordre : `commun.js` (menu, outils), `liste-commandes.js`, `effets.js`, `statut.js`, `captures.js`, `fond.js` (réseau animé), `demo.js` (démo Discord), `visite.js` (visite guidée)
 - `config.js` : réglages modifiables (statut en ligne)
 - `commandes.js` : liste des commandes (générée depuis le code du bot)
 - `assets/` : images · `assets/polices/` : polices Orbitron et Inter (licence SIL OFL, hébergées ici pour ne rien envoyer à Google)
