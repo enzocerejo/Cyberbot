@@ -89,7 +89,7 @@
   --discord-bleu-4d: #5865f24d;
   --discord-embed: #2b2d31;
   --discord-heure: #949ba4;
-  --discord-indice: #8e9297;
+  --discord-indice: #b5bac1;
   --discord-mention: #c9cdfb;
   --discord-message: #313338;
   --discord-rouge: #ed4245;
@@ -281,7 +281,7 @@ body { background: radial-gradient(1200px 700px at 75% -10%, var(--halo-haut), t
 .cat { background: var(--card-solid); border: 1px solid var(--line); color: var(--mut); border-radius: 30px; padding: 7px 14px; font: inherit; font-weight: 600; cursor: pointer; }
 .cat:hover { color: var(--txt); }
 .cat.active { background: var(--red-soft); border-color: var(--red); color: var(--red2); }
-.cat small { opacity: .7; margin-left: 4px; }
+.cat small { opacity: .85; margin-left: 4px; }
 .cmd-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
 .cmd { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; backdrop-filter: blur(6px); transition: border-color .2s; animation: appear .3s ease both; }
 .cmd:hover { border-color: var(--red-55); }
