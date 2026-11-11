@@ -2,7 +2,7 @@
 
 ## Carte du projet (Graphify)
 
-Avant d'explorer ce dépôt, lis d'abord `graphify-out/GRAPH_REPORT.md` : c'est la carte (graphe de connaissances) du projet, générée avec Graphify le 9/11/2026. Elle donne les éléments centraux, les groupes de thèmes et les liens entre fichiers.
+Avant d'explorer ce dépôt, lis d'abord `graphify-out/GRAPH_REPORT.md` : c'est la carte (graphe de connaissances) du projet, générée avec Graphify le 9/11/2026, mise à jour le 11/11/2026. Elle donne les éléments centraux, les groupes de thèmes et les liens entre fichiers.
 
 - La carte couvre deux dépôts réunis : les chemins qui commencent par `cyber/` sont dans CE dépôt (retire ce préfixe) ; ceux qui commencent par `portfolio/ (dépôt enzocerejo.github.io, site enzocerejo.fr)` sont dans l'autre dépôt.
 - `graphify-out/graph.json` contient le graphe complet. Si l'outil `graphify` est installé (`pip install graphifyy`), tu peux l'interroger : `graphify query "question" --graph graphify-out/graph.json`, `graphify explain "Nom"`, `graphify path "A" "B"`.
