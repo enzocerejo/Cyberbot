@@ -24,7 +24,7 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="preload" href="assets/polices/orbitron-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=dfde3923">
+  <link rel="stylesheet" href="style.css?v=3215ebd3">
 </head>
 <body>
   <a class="skip" href="#contenu">Aller au contenu</a>
@@ -33,7 +33,7 @@
 
   <header class="nav">
     <a class="brand" href="./"><img src="assets/logo.webp" alt="" width="38" height="38"><span>CYBER</span></a>
-    <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></button>
     <nav class="links" aria-label="Navigation principale">
       <a href="./#fonctions">Fonctions</a>
       <a href="./#modules">Modules</a>
@@ -50,9 +50,9 @@
 
   <main id="contenu">
     <section class="page-hero">
-      <span class="badge"><span class="dot-status"></span> Bientôt disponible</span>
+      <span class="badge"><span class="dot-status on"></span> Disponible sur demande</span>
       <h1>Modules sur mesure</h1>
-      <p class="lead">Une fonction qui n'existe dans aucun bot ? Elle sera codée exprès pour ton serveur, puis ajoutée à Cyber en saisissant un simple identifiant, comme une cassette qu'on insère.</p>
+      <p class="lead">Une fonction qui n'existe dans aucun bot ? Elle est codée exprès pour ton serveur, puis ajoutée à Cyber en saisissant un simple identifiant, comme une cassette qu'on insère.</p>
     </section>
 
     <section class="section narrow">
@@ -75,7 +75,7 @@
           <div class="step-num">3</div>
           <div class="step-body">
             <h2>Tu reçois ton identifiant</h2>
-            <p>Un code unique, réservé à ton serveur, du type <code>CYB-7F3A-K9</code>. Il ne fonctionne pas ailleurs.</p>
+            <p>Un code unique, réservé à ton serveur, du type <code>CYB-7F3A-K9QM-2XRT</code>. Il ne fonctionne pas ailleurs.</p>
           </div>
         </li>
         <li class="step">
@@ -85,7 +85,7 @@
             <p>Dans le <a href="panel/">tableau de bord</a>, ouvre <b>Modules publics</b> (tout en haut du menu) puis le petit bouton <b>« Code de module »</b>, colle ton identifiant : Cyber installe le module tout seul, sans redémarrage ni nouveau bot à inviter.</p>
             <div class="cassette petite" aria-hidden="true">
               <div class="cassette-corps">
-                <span class="cassette-etiquette">MODULE · <b>CYB-7F3A-K9</b></span>
+                <span class="cassette-etiquette">MODULE · <b>CYB-7F3A-K9QM-2XRT</b></span>
                 <span class="cassette-bobines"><i></i><i></i></span>
               </div>
               <div class="cassette-fente">▼ Code de module</div>
@@ -95,10 +95,10 @@
       </ol>
 
       <div class="note">
-        <b>🛠️ Pas encore ouvert.</b> Le système de modules sur mesure est en cours de développement. Tu peux déjà proposer ton idée sur le <a href="https://discord.gg/erqHM5s8Vz" target="_blank" rel="noopener">serveur de support</a> : tu seras prévenu dès l'ouverture.
+        <b><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Rien que pour ton serveur.</b> Le code ne marche que sur le serveur pour lequel il a été créé, et un administrateur peut désinstaller le module à tout moment dans <b>Modules publics</b> (ou avec <code>/modules</code>). Décris ton idée sur le <a href="https://discord.gg/erqHM5s8Vz" target="_blank" rel="noopener">serveur de support</a> pour commencer.
       </div>
       <div class="cta centre">
-        <a class="btn big" href="https://discord.gg/erqHM5s8Vz" target="_blank" rel="noopener">💡 Demander un module</a>
+        <a class="btn big" href="https://discord.gg/erqHM5s8Vz" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> Demander un module</a>
       </div>
     </section>
   </main>
@@ -133,13 +133,14 @@
   </footer>
 
   <script src="config.js?v=a596832e"></script>
+  <script src="js/icones.js?v=38ff3b57"></script>
   <script src="js/commun.js?v=b4479c25"></script>
-  <script src="js/liste-commandes.js?v=e662366d"></script>
+  <script src="js/liste-commandes.js?v=d4c31d49"></script>
   <script src="js/effets.js?v=6880e65e"></script>
-  <script src="js/statut.js?v=4989bae7"></script>
+  <script src="js/statut.js?v=3569bb04"></script>
   <script src="js/captures.js?v=285cc63f"></script>
   <script src="js/fond.js?v=d61157d8"></script>
-  <script src="js/demo.js?v=6b465c86"></script>
+  <script src="js/demo.js?v=8cc500af"></script>
   <script src="js/visite.js?v=d9acf2ff"></script>
 </body>
 </html>

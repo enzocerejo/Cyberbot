@@ -6,6 +6,12 @@
 @font-face { font-family: "Inter"; font-weight: 600; font-display: swap; src: url("assets/polices/inter-latin-600-normal.woff2") format("woff2"); }
 @font-face { font-family: "Inter"; font-weight: 700; font-display: swap; src: url("assets/polices/inter-latin-700-normal.woff2") format("woff2"); }
 
+/* Icônes au trait (outils/site/icones.json), à la place des emojis : elles prennent la couleur du texte */
+.i { width: 1.1em; height: 1.1em; flex-shrink: 0; vertical-align: -.18em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.btn .i, .cat .i { margin-right: 2px; }
+.cmd-head .i { color: var(--red2); }
+h3 .i, .module-discret .i, .note-langue .i { color: var(--red2); }
+
 :root {
   --bg: #07080c;
   --card: #12131acc;
@@ -139,7 +145,7 @@ body { background: radial-gradient(1200px 700px at 75% -10%, var(--halo-haut), t
 .links a:not(.btn) { color: var(--mut); font-weight: 500; position: relative; }
 .links a:not(.btn):hover, .links a[aria-current="page"] { color: var(--txt); text-decoration: none; }
 .links a[aria-current="page"]::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: var(--red); box-shadow: 0 0 8px var(--red); border-radius: 2px; }
-.menu-btn { display: none; background: none; border: 1px solid var(--line); color: var(--txt); font-size: 1.3rem; border-radius: 8px; padding: 4px 10px; cursor: pointer; }
+.menu-btn { display: none; background: none; border: 1px solid var(--line); color: var(--txt); font-size: 1.3rem; line-height: 1; border-radius: 8px; padding: 6px 9px; cursor: pointer; }
 
 /* Pastille de statut */
 .pill { display: none; align-items: center; gap: 7px; font-size: .85rem; color: var(--mut); border: 1px solid var(--line); border-radius: 20px; padding: 3px 10px; }
@@ -265,8 +271,9 @@ body { background: radial-gradient(1200px 700px at 75% -10%, var(--halo-haut), t
 }
 .card:hover { border-color: var(--red-77); transform: translateY(-3px); }
 .card:hover::before { opacity: 1; }
-.card .ico { font-size: 1.8rem; display: inline-block; width: max-content; align-self: flex-start; line-height: 1.2; transform-origin: center; transition: transform .3s; }
-.card:hover .ico { transform: scale(1.15) rotate(-6deg); }
+.card .ico { display: inline-grid; place-items: center; width: 46px; height: 46px; align-self: flex-start; border-radius: 12px; background: var(--red-soft); border: 1px solid var(--red-2a); color: var(--red2); transition: transform .3s, background .3s; }
+.card .ico .i { width: 22px; height: 22px; }
+.card:hover .ico { transform: translateY(-2px); background: var(--red-2a); }
 .card h3 { margin: 8px 0 6px; font-size: 1.15rem; }
 .card p { margin: 0; color: var(--mut); font-size: .95rem; }
 
@@ -476,7 +483,7 @@ body { background: radial-gradient(1200px 700px at 75% -10%, var(--halo-haut), t
 }
 
 /* ---------- Mobile ---------- */
-/* Le menu ☰ lui-même est réglé plus bas (il s'ouvre dès 1120 px) */
+/* Le menu (trois traits) lui-même est réglé plus bas (il s'ouvre dès 1120 px) */
 @media (max-width: 920px) {
   .split { grid-template-columns: 1fr; }
   .counters { grid-template-columns: repeat(2, 1fr); }
@@ -521,7 +528,7 @@ figure.browser { margin: 0; }
 .erreur-404 h1.glitch { font-size: clamp(4rem, 18vw, 8rem); margin: 10px 0; }
 .erreur-404 .term { width: min(420px, 100%); text-align: left; margin-top: 10px; }
 .erreur-404 .muted-s { margin-top: 22px; }
-/* Le menu a plus de liens : il passe en menu ☰ dès 1120 px pour ne jamais couper « Tableau de bord » sur deux lignes */
+/* Le menu a plus de liens : il passe en menu (trois traits) dès 1120 px pour ne jamais couper « Tableau de bord » sur deux lignes */
 .links a { white-space: nowrap; }
 @media (max-width: 1120px) {
   .menu-btn { display: block; }
@@ -577,7 +584,8 @@ figure.browser { margin: 0; }
 }
 .vp-anim li.rouge { border-left-color: var(--red); }
 .vp-anim.modules li { border-left-color: var(--warn); }
-.vp-anim li span { font-size: 1.15rem; display: inline-block; width: 1.6em; vertical-align: -1px; }
+.vp-anim li span { display: inline-block; width: 1.6em; color: var(--mut); }
+.vp-anim li.rouge span { color: var(--red2); }
 .visite-panneau[hidden] { display: none; }
 .visite-panneau.actif .vp-anim li { animation: vp-ligne .45s ease both; }
 .visite-panneau.actif .vp-anim li:nth-child(1) { animation-delay: .25s; }

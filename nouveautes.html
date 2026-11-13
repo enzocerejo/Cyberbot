@@ -24,7 +24,7 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="preload" href="assets/polices/orbitron-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=dfde3923">
+  <link rel="stylesheet" href="style.css?v=3215ebd3">
 </head>
 <body>
   <a class="skip" href="#contenu">Aller au contenu</a>
@@ -33,7 +33,7 @@
 
   <header class="nav">
     <a class="brand" href="./"><img src="assets/logo.webp" alt="" width="38" height="38"><span>CYBER</span></a>
-    <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></button>
     <nav class="links" aria-label="Navigation principale">
       <a href="./#fonctions">Fonctions</a>
       <a href="./#modules">Modules</a>
@@ -69,11 +69,22 @@
 
       <div class="timeline">
         <article class="release">
-          <div class="rel-head"><span class="version">v1.9.1</span><time datetime="2026-10-30">30 octobre 2026</time><span class="rel-tag new">Dernière</span></div>
+          <div class="rel-head"><span class="version">v2.0</span><time datetime="2026-11-14">14 novembre 2026</time><span class="rel-tag new">Dernière</span></div>
+          <h2>Modules sur mesure</h2>
+          <ul>
+            <li><b>Modules sur mesure ouverts</b> : une fonction codée exprès pour ton serveur, installée avec un code unique (<code>CYB-XXXX-XXXX-XXXX</code>) dans <b>Modules publics</b> → « Code de module », ou avec <code>/modules code:</code>.</li>
+            <li>Le code ne marche que sur le serveur pour lequel il a été créé ; 5 essais toutes les 10 minutes, puis une pause.</li>
+            <li>Les commandes d'un module sur mesure n'apparaissent que sur les serveurs où il est installé, avec leur propre rubrique dans <code>/help</code>.</li>
+            <li>Code de Cyber réorganisé (par domaine) et site redessiné avec des icônes au trait.</li>
+          </ul>
+        </article>
+
+        <article class="release">
+          <div class="rel-head"><span class="version">v1.9.1</span><time datetime="2026-10-30">30 octobre 2026</time></div>
           <h2>Salons bilingues</h2>
           <ul>
-            <li><b>Salons bilingues</b> : dans les salons ou catégories choisis, les messages automatiques de Cyber ont un bouton 🇬🇧 English / 🇫🇷 Français qui change la langue du message sur place, sans en envoyer un nouveau (<code>/config language</code> avec l'option <code>bilingual</code>, ou panel, onglet Général).</li>
-            <li><b>Tableau de bord en anglais</b> : bouton 🇬🇧 EN / 🇫🇷 FR en haut à droite.</li>
+            <li><b>Salons bilingues</b> : dans les salons ou catégories choisis, les messages automatiques de Cyber ont un bouton English / Français qui change la langue du message sur place, sans en envoyer un nouveau (<code>/config language</code> avec l'option <code>bilingual</code>, ou panel, onglet Général).</li>
+            <li><b>Tableau de bord en anglais</b> : bouton EN / FR en haut à droite.</li>
             <li>Le menu « / » d'un serveur ne montre que les commandes des modules installés.</li>
             <li>Panel : la sous-rubrique choisie s'allume même tout en bas de la page.</li>
           </ul>
@@ -240,13 +251,14 @@
   </footer>
 
   <script src="config.js?v=a596832e"></script>
+  <script src="js/icones.js?v=38ff3b57"></script>
   <script src="js/commun.js?v=b4479c25"></script>
-  <script src="js/liste-commandes.js?v=e662366d"></script>
+  <script src="js/liste-commandes.js?v=d4c31d49"></script>
   <script src="js/effets.js?v=6880e65e"></script>
-  <script src="js/statut.js?v=4989bae7"></script>
+  <script src="js/statut.js?v=3569bb04"></script>
   <script src="js/captures.js?v=285cc63f"></script>
   <script src="js/fond.js?v=d61157d8"></script>
-  <script src="js/demo.js?v=6b465c86"></script>
+  <script src="js/demo.js?v=8cc500af"></script>
   <script src="js/visite.js?v=d9acf2ff"></script>
 </body>
 </html>
