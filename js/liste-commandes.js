@@ -9,9 +9,14 @@ if (data && $('#liste')) {
   const $liste = $('#liste');
   const $recherche = $('#recherche');
   let categorie = 'toutes';
+  // Icône de chaque catégorie (à la place de l'emoji du bot) ; une catégorie inconnue (module sur mesure) prend « module »
+  const ICONE_CAT = { utilitaires: 'mallette', academie: 'diplome', reseau: 'reseau', niveaux: 'courbe', systemes: 'reglages', moderation: 'bouclier', roles: 'etiquette', fun: 'de', admin: 'outil' };
+  const iconeCat = (id) => icone(ICONE_CAT[id] || 'module');
 
   const boutonCat = (id, label, n) => {
-    const b = el('button', `cat${id === categorie ? ' active' : ''}`, label);
+    const b = el('button', `cat${id === categorie ? ' active' : ''}`);
+    if (id !== 'toutes') b.append(iconeCat(id), ' ');
+    b.append(label);
     b.setAttribute('role', 'tab');
     b.setAttribute('aria-selected', String(id === categorie));
     b.append(el('small', null, n));
@@ -20,11 +25,11 @@ if (data && $('#liste')) {
   };
 
   function afficher() {
-    $cats.replaceChildren(boutonCat('toutes', 'Toutes', total), ...data.map((c) => boutonCat(c.id, `${c.emoji} ${c.label}`, c.commands.length)));
+    $cats.replaceChildren(boutonCat('toutes', 'Toutes', total), ...data.map((c) => boutonCat(c.id, c.label, c.commands.length)));
     const q = $recherche.value.trim().toLowerCase().replace(/^\//, '');
     const cmds = data
       .filter((c) => categorie === 'toutes' || c.id === categorie)
-      .flatMap((c) => c.commands.map((cmd) => ({ ...cmd, emoji: c.emoji })))
+      .flatMap((c) => c.commands.map((cmd) => ({ ...cmd, cat: c.id })))
       .filter((cmd) => !q || cmd.name.includes(q) || cmd.desc.toLowerCase().includes(q) || cmd.subs.some((s) => s.name.includes(q)));
 
     if (!cmds.length) { $liste.replaceChildren(el('p', 'vide', 'Aucune commande trouvée.')); return; }
@@ -32,7 +37,7 @@ if (data && $('#liste')) {
       const card = el('article', 'cmd');
       card.style.animationDelay = `${Math.min(i, 20) * 15}ms`;
       const head = el('div', 'cmd-head');
-      head.append(el('span', null, cmd.emoji), el('span', 'cmd-name', `/${cmd.name}`));
+      head.append(iconeCat(cmd.cat), el('span', 'cmd-name', `/${cmd.name}`));
       if (cmd.staff) head.append(el('span', 'tag-staff', 'staff'));
       card.append(head, el('p', null, cmd.desc));
       if (cmd.subs.length) {

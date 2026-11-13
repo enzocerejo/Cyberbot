@@ -29,7 +29,11 @@
 
   function embed(titre, lignes, extra) {
     const e = el('div', 'emb');
-    e.append(el('b', null, titre));
+    // titre = [icône, texte] : l'icône est dessinée (js/icones.js), pas un emoji
+    const t = el('b', 'emb-titre');
+    if (Array.isArray(titre)) t.append(icone(titre[0]), ` ${titre[1]}`);
+    else t.textContent = titre;
+    e.append(t);
     for (const l of lignes) {
       const d = el('div');
       for (const part of l) d.append(typeof part === 'string' ? part : part);
@@ -51,14 +55,14 @@
 
   const scenes = [
     async () => {
-      ajouter('Cyber', null, { embed: embed('👋 Nouveau membre', [['Bienvenue ', mention('Léo'), ' sur ', el('b', null, 'Mon serveur'), ' ! Tu es notre 128ᵉ membre 🎉']]) });
+      ajouter('Cyber', null, { embed: embed(['arrivee', 'Nouveau membre'], [['Bienvenue ', mention('Léo'), ' sur ', el('b', null, 'Mon serveur'), ' ! Tu es notre 128ᵉ membre.']]) });
     },
     async () => {
-      const spam = ajouter('Spam_bot', 'nitro gratuit ici 🎁 discord.gg/free-nitro');
+      const spam = ajouter('Spam_bot', 'nitro gratuit ici discord.gg/free-nitro');
       await pause(1100);
       spam.classList.add('deleted');
       await pause(500);
-      const w = ajouter('Cyber', null, { embed: embed('🤖 Automod', [[mention('Spam_bot'), ', invitation Discord interdite (1/3).']]) });
+      const w = ajouter('Cyber', null, { embed: embed(['robot', 'Automod'], [[mention('Spam_bot'), ', invitation Discord interdite (1/3).']]) });
       w.querySelector('.emb').style.borderLeftColor = '#ffc457';
       await pause(1400);
       spam.classList.add('gone');
@@ -70,21 +74,22 @@
       ajouter('Enzo', '/rang', { cmd: true });
       await pause(600);
       const bar = el('div', 'bar'); const fill = el('span'); bar.append(fill);
-      ajouter('Cyber', null, { embed: embed('📈 Rang de Enzo', [['Niveau ', el('b', null, '12'), ' · Classement ', el('b', null, '#3')], ['1 840 / 2 400 XP']], bar) });
+      ajouter('Cyber', null, { embed: embed(['courbe', 'Rang de Enzo'], [['Niveau ', el('b', null, '12'), ' · Classement ', el('b', null, '#3')], ['1 840 / 2 400 XP']], bar) });
       await pause(80); fill.style.width = '77%';
     },
     async () => {
       await taper('/ticket ouvrir');
-      ajouter('Maya', '🎫 Ouvrir un ticket');
+      ajouter('Maya', 'Ouvrir un ticket');
       await pause(600);
-      const b = el('span', 'btn-d', '🔒 Fermer le ticket');
-      ajouter('Cyber', null, { embed: embed('🎫 Ticket ouvert', [['Ton ticket est prêt : ', el('b', null, '#ticket-0042')], ['L\'équipe va te répondre.']], b) });
+      const b = el('span', 'btn-d');
+      b.append(icone('cadenas'), ' Fermer le ticket');
+      ajouter('Cyber', null, { embed: embed(['ticket', 'Ticket ouvert'], [['Ton ticket est prêt : ', el('b', null, '#ticket-0042')], ['L\'équipe va te répondre.']], b) });
     },
     async () => {
       await taper('/sousreseau 10.0.0.0/26');
       ajouter('Enzo', '/sousreseau 10.0.0.0/26', { cmd: true });
       await pause(600);
-      ajouter('Cyber', null, { embed: embed('🧮 10.0.0.0/26', [['Masque ', el('b', null, '255.255.255.192')], ['Broadcast ', el('b', null, '10.0.0.63'), ' · ', el('b', null, '62'), ' hôtes']]) });
+      ajouter('Cyber', null, { embed: embed(['reseau', '10.0.0.0/26'], [['Masque ', el('b', null, '255.255.255.192')], ['Broadcast ', el('b', null, '10.0.0.63'), ' · ', el('b', null, '62'), ' hôtes']]) });
     },
   ];
 

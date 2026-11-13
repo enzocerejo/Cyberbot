@@ -43,14 +43,14 @@ async function verifierStatut() {
     if (Number.isFinite(s.serveurs)) parts.push(EN ? `${nombre(s.serveurs)} server${s.serveurs > 1 ? 's' : ''}` : `${nombre(s.serveurs)} serveur${s.serveurs > 1 ? 's' : ''}`);
     if (Number.isFinite(s.membres)) parts.push(EN ? `${nombre(s.membres)} members` : `${nombre(s.membres)} membres`);
     if (Number.isFinite(s.depuis)) parts.push(EN ? `online for ${depuis(s.depuis)}` : `en ligne depuis ${depuis(s.depuis)}`);
-    afficherStatut('on', EN ? '✅ Cyber is online' : '✅ Cyber est en ligne', parts.join(' · ') || (EN ? 'All commands work normally.' : 'Toutes les commandes fonctionnent normalement.'));
+    afficherStatut('on', EN ? 'Cyber is online' : 'Cyber est en ligne', parts.join(' · ') || (EN ? 'All commands work normally.' : 'Toutes les commandes fonctionnent normalement.'));
     document.querySelectorAll('[data-serveurs]').forEach((b) => {
       if (!Number.isFinite(s.serveurs)) return;
       b.querySelector('b').textContent = nombre(s.serveurs);
       b.hidden = false;
     });
   } catch {
-    afficherStatut('off', EN ? '🔴 Cyber is offline' : '🔴 Cyber est hors ligne',
+    afficherStatut('off', EN ? 'Cyber is offline' : 'Cyber est hors ligne',
       EN ? 'The bot is under maintenance or restarting. Try again in a few minutes.' : 'Le bot est en maintenance ou redémarre. Réessaie dans quelques minutes.');
   }
 }
