@@ -24,7 +24,7 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="preload" href="assets/polices/orbitron-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=3215ebd3">
+  <link rel="stylesheet" href="style.css?v=3e622573">
 </head>
 <body>
   <a class="skip" href="#contenu">Aller au contenu</a>
@@ -95,11 +95,47 @@
       </ol>
 
       <div class="note">
-        <b><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Rien que pour ton serveur.</b> Le code ne marche que sur le serveur pour lequel il a été créé, et un administrateur peut désinstaller le module à tout moment dans <b>Modules publics</b> (ou avec <code>/modules</code>). Décris ton idée sur le <a href="https://discord.gg/erqHM5s8Vz" target="_blank" rel="noopener">serveur de support</a> pour commencer.
+        <b><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Rien que pour ton serveur.</b> Le code ne marche que sur le serveur pour lequel il a été créé, et un administrateur peut désinstaller le module à tout moment dans <b>Modules publics</b> (ou avec <code>/modules</code>). Pour commencer, décris ton idée ci-dessous.
       </div>
-      <div class="cta centre">
-        <a class="btn big" href="https://discord.gg/erqHM5s8Vz" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> Demander un module</a>
-      </div>
+    </section>
+
+    <section id="demande" class="section narrow">
+      <span class="kicker">// DEMANDE</span>
+      <h2>Demander un module</h2>
+      <p class="lead">Décris ce qu'il te faut : ta demande arrive directement à l'équipe de Cyber, qui te répond sur Discord. C'est gratuit et sans engagement.</p>
+      <form class="demande" id="demande-form" novalidate>
+        <div class="champ">
+          <label for="d-nom">Nom du module</label>
+          <input id="d-nom" name="nom" type="text" minlength="3" maxlength="80" required placeholder="Ex : Casino du serveur" autocomplete="off">
+        </div>
+        <div class="champ">
+          <label for="d-description">Ce que doit faire le module</label>
+          <textarea id="d-description" name="description" minlength="20" maxlength="1500" rows="6" required placeholder="Les commandes, les boutons, ce qui se passe… Plus c'est précis, mieux c'est."></textarea>
+          <small><span data-compteur="d-description">0</span> / 1500</small>
+        </div>
+        <div class="champ">
+          <label for="d-details">Précisions <span class="facultatif">(facultatif)</span></label>
+          <textarea id="d-details" name="details" maxlength="500" rows="3" placeholder="Un exemple, un bot qui le fait déjà, un délai…"></textarea>
+        </div>
+        <div class="champs-2">
+          <div class="champ">
+            <label for="d-pseudo">Ton pseudo Discord</label>
+            <input id="d-pseudo" name="pseudo" type="text" minlength="2" maxlength="40" required placeholder="Ex : enzo" autocomplete="off">
+            <small>Pour qu'on puisse te répondre.</small>
+          </div>
+          <div class="champ">
+            <label for="d-serveur">Ton serveur <span class="facultatif">(facultatif)</span></label>
+            <input id="d-serveur" name="serveur" type="text" maxlength="100" placeholder="Nom ou identifiant du serveur" autocomplete="off">
+          </div>
+        </div>
+        <div class="piege" aria-hidden="true"><label for="d-site">Ne pas remplir</label><input id="d-site" name="site_web" type="text" tabindex="-1" autocomplete="off"></div>
+        <label class="accord"><input id="d-accord" name="accord" type="checkbox" required> <span>J'accepte que ma demande et mon pseudo soient envoyés à l'équipe de Cyber, dans un salon privé de son serveur Discord (voir la <a href="confidentialite">confidentialité</a>).</span></label>
+        <div class="demande-bas">
+          <button class="btn big" type="submit"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg> Envoyer la demande</button>
+          <p class="demande-etat" id="demande-etat" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+      <p class="muted-s">Tu préfères Discord ? Utilise <code>/requestmodule</code> sur ton serveur, le bouton « Demander un module » du <a href="panel/">tableau de bord</a>, ou le <a href="https://discord.gg/erqHM5s8Vz" target="_blank" rel="noopener">serveur de support</a>.</p>
     </section>
   </main>
 
@@ -133,7 +169,7 @@
   </footer>
 
   <script src="config.js?v=a596832e"></script>
-  <script src="js/icones.js?v=38ff3b57"></script>
+  <script src="js/icones.js?v=94cd5acc"></script>
   <script src="js/commun.js?v=b4479c25"></script>
   <script src="js/liste-commandes.js?v=d4c31d49"></script>
   <script src="js/effets.js?v=6880e65e"></script>
@@ -142,5 +178,6 @@
   <script src="js/fond.js?v=d61157d8"></script>
   <script src="js/demo.js?v=8cc500af"></script>
   <script src="js/visite.js?v=d9acf2ff"></script>
+  <script src="js/demande.js?v=35e28925"></script>
 </body>
 </html>
