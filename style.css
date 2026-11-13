@@ -627,3 +627,24 @@ figure.browser { margin: 0; }
   .visite-panneau.actif, .visite-panneau.actif .vp-anim li, .module-carte::after, .visite-scene::before { animation: none; }
   .visite-onglet.actif .vo-barre { animation: none; width: 100%; }
 }
+
+/* Formulaire « Demander un module » (page modules) */
+.demande { display: grid; gap: 16px; margin-top: 24px; background: var(--card-solid); border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
+.demande .champ { display: grid; gap: 6px; align-content: start; }
+.demande label { font-weight: 600; }
+.demande .facultatif { color: var(--mut); font-weight: 400; }
+.demande input[type="text"], .demande textarea { width: 100%; font: inherit; color: var(--txt); background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 11px 13px; outline: none; transition: border-color .2s, box-shadow .2s; }
+.demande textarea { resize: vertical; min-height: 90px; }
+.demande input[type="text"]:focus, .demande textarea:focus { border-color: var(--red); box-shadow: 0 0 0 3px var(--red-soft); }
+.demande small { color: var(--mut); font-size: .85rem; }
+.demande .champs-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.demande .accord { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; color: var(--mut); font-size: .92rem; }
+.demande .accord input { margin-top: 4px; accent-color: var(--red); width: 16px; height: 16px; flex: none; }
+.demande .piege { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.demande-bas { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+.demande-bas .btn { border: 0; cursor: pointer; }
+.demande-bas .btn:disabled { opacity: .6; cursor: wait; }
+.demande-etat { margin: 0; font-weight: 600; }
+.demande-etat.ok { color: var(--ok); }
+.demande-etat.ko { color: var(--red2); }
+@media (max-width: 640px) { .demande { padding: 18px; } .demande .champs-2 { grid-template-columns: 1fr; } }
