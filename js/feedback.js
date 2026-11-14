@@ -9,11 +9,18 @@ if (formFeedback) {
   const images = choixImages(formFeedback.querySelector('[data-images]'), dire);
   let connecte = false;
   montrerConnexion(formFeedback).then((c) => { connecte = c; });
+  // « Autre chose » : un champ pour préciser le sujet
+  const blocSujet = formFeedback.querySelector('[data-sujet]');
+  const majSujet = () => { blocSujet.hidden = formFeedback.elements.type.value !== 'autre'; };
+  formFeedback.querySelectorAll('input[name="type"]').forEach((r) => r.addEventListener('change', majSujet));
+  formFeedback.addEventListener('reset', () => setTimeout(majSujet));
 
   formFeedback.addEventListener('submit', async (e) => {
     e.preventDefault();
     const f = formFeedback.elements;
     const v = (nom) => f[nom].value.trim();
+    const autre = f.type.value === 'autre';
+    if (autre && v('sujet').length < 3) return dire('Précise le sujet de ton message (3 caractères au moins).', false), f.sujet.focus();
     if (v('message').length < 10) return dire('Écris ton message (10 caractères au moins).', false), f.message.focus();
     if (!connecte) {
       if (v('discordId') && !/^\d{17,20}$/.test(v('discordId')))
@@ -27,7 +34,7 @@ if (formFeedback) {
     dire('Envoi en cours…', true);
     try {
       const r = await envoyerAuBot('/feedback', {
-        type: f.type.value, message: v('message'), images: images.valeurs(),
+        type: f.type.value, ...(autre ? { sujet: v('sujet') } : {}), message: v('message'), images: images.valeurs(),
         ...(connecte ? {} : { pseudo: v('pseudo'), discordId: v('discordId') }),
         site_web: f.site_web.value, accord: f.accord.checked,
       });
