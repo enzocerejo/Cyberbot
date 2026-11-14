@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; font-src 'self'; style-src 'self'; script-src 'self'; connect-src https://discord.com https://panel.cyberbot.fr; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Feedback · Cyber</title>
+  <meta name="description" content="Une idée, un bug, un avis sur Cyber ? Écris à l'équipe, avec des captures d'écran si tu veux.">
+  <meta name="theme-color" content="#ff3d5a">
+  <link rel="canonical" href="https://cyberbot.fr/feedback">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Cyber">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://cyberbot.fr/feedback">
+  <meta property="og:title" content="Feedback · Cyber">
+  <meta property="og:description" content="Une idée, un bug, un avis sur Cyber ? Écris à l'équipe, avec des captures d'écran si tu veux.">
+  <meta property="og:image" content="https://cyberbot.fr/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Cyber, bot Discord">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preload" href="assets/polices/orbitron-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=7b2f31ef">
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+  <canvas id="reseau" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="brand" href="./"><img src="assets/logo.webp" alt="" width="38" height="38"><span>CYBER</span></a>
+    <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></button>
+    <nav class="links" aria-label="Navigation principale">
+      <a href="./#fonctions">Fonctions</a>
+      <a href="./#modules">Modules</a>
+      <a href="./#commandes">Commandes</a>
+      <a href="demarrer">Démarrer</a>
+      <a href="nouveautes">Nouveautés</a>
+      <a href="feedback" aria-current="page">Feedback</a>
+      <a href="docs/">Docs</a>
+      <a href="panel/">Tableau de bord</a>
+      <a class="lang" href="en" hreflang="en" lang="en" title="English version">EN</a>
+      <span class="pill" data-statut title="Statut de Cyber"><span class="dot-status"></span><span class="pill-txt">Statut</span></span>
+      <a class="btn small" href="https://discord.com/oauth2/authorize?client_id=1563977964616421376&amp;permissions=282884146850902&amp;scope=bot+applications.commands" target="_blank" rel="noopener">Ajouter Cyber</a>
+    </nav>
+  </header>
+
+  <main id="contenu">
+    <section class="page-hero">
+      <span class="badge"><span class="dot-status on"></span> Lu par l'équipe</span>
+      <h1>Ton avis compte</h1>
+      <p class="lead">Une idée, un bug, quelque chose qui te plaît ou qui te gêne ? Écris-le ici : ton message arrive directement à l'équipe de Cyber, avec tes captures d'écran si tu en ajoutes.</p>
+    </section>
+
+    <section class="section narrow">
+      <form class="demande" id="feedback-form" novalidate>
+        <fieldset class="types">
+          <legend>C'est plutôt…</legend>
+          <label class="type"><input type="radio" name="type" value="avis" checked> <span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Un avis</span></label>
+          <label class="type"><input type="radio" name="type" value="idee"> <span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> Une idée</span></label>
+          <label class="type"><input type="radio" name="type" value="bug"> <span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m8 2 1.9 1.9"/><path d="M14.1 3.9 16 2"/><path d="M9 7.1V6a3 3 0 1 1 6 0v1.1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6"/><path d="M12 20v-9"/><path d="M6.5 13H3"/><path d="M21 13h-3.5"/><path d="M6 9 3 7"/><path d="m18 9 3-2"/><path d="m6 17-3 2"/><path d="m18 17 3 2"/></svg> Un bug</span></label>
+          <label class="type"><input type="radio" name="type" value="autre"> <span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.59 2.59A2 2 0 0 0 11.17 2H4a2 2 0 0 0-2 2v7.17a2 2 0 0 0 .59 1.42l8.7 8.7a2.43 2.43 0 0 0 3.42 0l6.58-6.58a2.43 2.43 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg> Autre chose</span></label>
+        </fieldset>
+        <div class="champ">
+          <label for="f-message">Ton message</label>
+          <textarea id="f-message" name="message" minlength="10" maxlength="2000" rows="7" required placeholder="Ce qui te plaît, ce qui manque, ce qui ne marche pas… Pour un bug : la commande utilisée et ce qui s'est passé."></textarea>
+          <small><span data-compteur="f-message">0</span> / 2000</small>
+        </div>
+        <div class="champ">
+          <span class="etiquette">Images <span class="facultatif">(facultatif)</span></span>
+          <div class="images-choix" data-images="feedback">
+            <button class="btn ghost small" type="button" data-images-ajouter><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></svg> Ajouter des images</button>
+            <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" multiple hidden data-images-fichier>
+            <div class="images-vignettes" data-images-vignettes></div>
+          </div>
+          <small>3 images au plus (PNG, JPEG, GIF ou WebP). Les informations cachées des photos, comme la position GPS, sont retirées.</small>
+        </div>
+
+        <div class="identite" data-identite>
+          <div class="identite-connecte" data-connecte hidden>
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg> <span>Envoyé en tant que <b data-connecte-nom></b> (compte Discord vérifié).</span>
+          </div>
+          <div data-anonyme>
+            <p class="identite-aide">Pour qu'on puisse te répondre, donne ton pseudo Discord, ton identifiant, ou les deux. Tu peux aussi <a href="https://panel.cyberbot.fr/login?retour=feedback" data-connexion>te connecter avec Discord</a> : ton pseudo et ton identifiant sont alors ajoutés tout seuls.</p>
+            <div class="champs-2">
+              <div class="champ">
+                <label for="f-pseudo">Pseudo Discord</label>
+                <input id="f-pseudo" name="pseudo" type="text" maxlength="40" placeholder="Ex : enzo" autocomplete="off">
+              </div>
+              <div class="champ">
+                <label for="f-id">Identifiant Discord</label>
+                <input id="f-id" name="discordId" type="text" inputmode="numeric" maxlength="20" placeholder="Ex : 123456789012345678" autocomplete="off">
+                <small>Discord → Paramètres → Avancés → Mode développeur, puis clic droit sur ton nom → Copier l'identifiant.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="piege" aria-hidden="true"><label for="f-site">Ne pas remplir</label><input id="f-site" name="site_web" type="text" tabindex="-1" autocomplete="off"></div>
+        <label class="accord"><input id="f-accord" name="accord" type="checkbox" required> <span>J'accepte que mon message, mes images et mon pseudo ou identifiant soient envoyés à l'équipe de Cyber, dans un salon privé de son serveur Discord (voir la <a href="confidentialite">confidentialité</a>).</span></label>
+        <div class="demande-bas">
+          <button class="btn big" type="submit"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg> Envoyer mon message</button>
+          <p class="demande-etat" id="feedback-etat" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+      <p class="muted-s">Besoin d'aide tout de suite ? Passe par le <a href="https://discord.gg/erqHM5s8Vz" target="_blank" rel="noopener">serveur de support</a>. Pour une fonction entière, utilise plutôt <a href="modules#demande">Demander un module</a>.</p>
+    </section>
+  </main>
+
+
+  <footer class="footer">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="./"><img src="assets/logo.webp" alt="" width="34" height="34" loading="lazy"><span>CYBER</span></a>
+        <p>Protège et anime ton serveur Discord. 100 % gratuit.</p>
+      </div>
+      <div>
+        <h3>Cyber</h3>
+        <a href="https://discord.com/oauth2/authorize?client_id=1563977964616421376&amp;permissions=282884146850902&amp;scope=bot+applications.commands" target="_blank" rel="noopener">Ajouter à Discord</a>
+        <a href="demarrer">Bien démarrer</a>
+        <a href="./#commandes">Commandes</a>
+        <a href="nouveautes">Nouveautés et statut</a>
+        <a href="modules">Modules sur mesure</a>
+        <a href="feedback">Donner mon avis</a>
+        <a href="panel/">Tableau de bord</a>
+        <a href="docs/">Documentation</a>
+        <a href="https://discord.gg/erqHM5s8Vz" target="_blank" rel="noopener">Serveur de support</a>
+      </div>
+      <div>
+        <h3>Légal</h3>
+        <a href="conditions">Conditions d'utilisation</a>
+        <a href="confidentialite">Confidentialité</a>
+        <a href="mentions-legales">Mentions légales</a>
+        <a href="en" hreflang="en" lang="en">English version</a>
+      </div>
+    </div>
+    <p class="foot-bottom">© <span data-annee>2026</span> Cyber · Créé par <a href="https://enzocerejo.fr" target="_blank" rel="noopener">Enzo Cerejo</a> · Cyber n'est pas affilié à Discord Inc.</p>
+  </footer>
+
+  <script src="config.js?v=a596832e"></script>
+  <script src="js/icones.js?v=0a55d12d"></script>
+  <script src="js/commun.js?v=b4479c25"></script>
+  <script src="js/liste-commandes.js?v=d4c31d49"></script>
+  <script src="js/effets.js?v=6880e65e"></script>
+  <script src="js/statut.js?v=3569bb04"></script>
+  <script src="js/captures.js?v=285cc63f"></script>
+  <script src="js/fond.js?v=d61157d8"></script>
+  <script src="js/demo.js?v=8cc500af"></script>
+  <script src="js/visite.js?v=d9acf2ff"></script>
+  <script src="js/formulaires.js?v=9fcc40b6"></script>
+  <script src="js/demande.js?v=73caade5"></script>
+  <script src="js/feedback.js?v=f345ab81"></script>
+</body>
+</html>

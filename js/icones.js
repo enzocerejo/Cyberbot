@@ -28,7 +28,12 @@ const CYBER_ICONES = {
  "etiquette": "<path d=\"M12.59 2.59A2 2 0 0 0 11.17 2H4a2 2 0 0 0-2 2v7.17a2 2 0 0 0 .59 1.42l8.7 8.7a2.43 2.43 0 0 0 3.42 0l6.58-6.58a2.43 2.43 0 0 0 0-3.42z\"/><circle cx=\"7.5\" cy=\"7.5\" r=\"1.5\"/>",
  "de": "<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"3\"/><path d=\"M8 8h.01\"/><path d=\"M16 8h.01\"/><path d=\"M12 12h.01\"/><path d=\"M8 16h.01\"/><path d=\"M16 16h.01\"/>",
  "menu": "<path d=\"M4 6h16\"/><path d=\"M4 12h16\"/><path d=\"M4 18h16\"/>",
- "envoyer": "<path d=\"m22 2-7 20-4-9-9-4z\"/><path d=\"M22 2 11 13\"/>"
+ "envoyer": "<path d=\"m22 2-7 20-4-9-9-4z\"/><path d=\"M22 2 11 13\"/>",
+ "image": "<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\"/><circle cx=\"9\" cy=\"9\" r=\"2\"/><path d=\"m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21\"/>",
+ "fermer": "<path d=\"M18 6 6 18\"/><path d=\"m6 6 12 12\"/>",
+ "message": "<path d=\"M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z\"/>",
+ "bug": "<path d=\"m8 2 1.9 1.9\"/><path d=\"M14.1 3.9 16 2\"/><path d=\"M9 7.1V6a3 3 0 1 1 6 0v1.1\"/><path d=\"M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6\"/><path d=\"M12 20v-9\"/><path d=\"M6.5 13H3\"/><path d=\"M21 13h-3.5\"/><path d=\"M6 9 3 7\"/><path d=\"m18 9 3-2\"/><path d=\"m6 17-3 2\"/><path d=\"m18 17 3 2\"/>",
+ "utilisateur": "<circle cx=\"12\" cy=\"8\" r=\"4\"/><path d=\"M4 21a8 8 0 0 1 16 0\"/>"
 };
 function icone(nom) {
   const s = document.createElementNS('http://www.w3.org/2000/svg', 'svg');

@@ -24,7 +24,7 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="preload" href="assets/polices/orbitron-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=3e622573">
+  <link rel="stylesheet" href="style.css?v=7b2f31ef">
 </head>
 <body>
   <a class="skip" href="#contenu">Aller au contenu</a>
@@ -40,6 +40,7 @@
       <a href="./#commandes">Commandes</a>
       <a href="demarrer">Démarrer</a>
       <a href="nouveautes">Nouveautés</a>
+      <a href="feedback">Feedback</a>
       <a href="docs/">Docs</a>
       <a href="panel/">Tableau de bord</a>
       <a class="lang" href="en" hreflang="en" lang="en" title="English version">EN</a>
@@ -117,8 +118,20 @@
           <label for="d-details">Précisions <span class="facultatif">(facultatif)</span></label>
           <textarea id="d-details" name="details" maxlength="500" rows="3" placeholder="Un exemple, un bot qui le fait déjà, un délai…"></textarea>
         </div>
+        <div class="champ">
+          <span class="etiquette">Images <span class="facultatif">(facultatif)</span></span>
+          <div class="images-choix" data-images="demande">
+            <button class="btn ghost small" type="button" data-images-ajouter><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></svg> Ajouter des images</button>
+            <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" multiple hidden data-images-fichier>
+            <div class="images-vignettes" data-images-vignettes></div>
+          </div>
+          <small>3 images au plus : une capture d'un autre bot, un croquis… Les informations cachées des photos (position GPS…) sont retirées.</small>
+        </div>
+        <div class="identite-connecte" data-connecte hidden>
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg> <span>Envoyé en tant que <b data-connecte-nom></b> (compte Discord vérifié).</span>
+        </div>
         <div class="champs-2">
-          <div class="champ">
+          <div class="champ" data-anonyme>
             <label for="d-pseudo">Ton pseudo Discord</label>
             <input id="d-pseudo" name="pseudo" type="text" minlength="2" maxlength="40" required placeholder="Ex : enzo" autocomplete="off">
             <small>Pour qu'on puisse te répondre.</small>
@@ -153,6 +166,7 @@
         <a href="./#commandes">Commandes</a>
         <a href="nouveautes">Nouveautés et statut</a>
         <a href="modules">Modules sur mesure</a>
+        <a href="feedback">Donner mon avis</a>
         <a href="panel/">Tableau de bord</a>
         <a href="docs/">Documentation</a>
         <a href="https://discord.gg/erqHM5s8Vz" target="_blank" rel="noopener">Serveur de support</a>
@@ -169,7 +183,7 @@
   </footer>
 
   <script src="config.js?v=a596832e"></script>
-  <script src="js/icones.js?v=94cd5acc"></script>
+  <script src="js/icones.js?v=0a55d12d"></script>
   <script src="js/commun.js?v=b4479c25"></script>
   <script src="js/liste-commandes.js?v=d4c31d49"></script>
   <script src="js/effets.js?v=6880e65e"></script>
@@ -178,6 +192,8 @@
   <script src="js/fond.js?v=d61157d8"></script>
   <script src="js/demo.js?v=8cc500af"></script>
   <script src="js/visite.js?v=d9acf2ff"></script>
-  <script src="js/demande.js?v=35e28925"></script>
+  <script src="js/formulaires.js?v=9fcc40b6"></script>
+  <script src="js/demande.js?v=73caade5"></script>
+  <script src="js/feedback.js?v=f345ab81"></script>
 </body>
 </html>

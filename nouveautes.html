@@ -24,7 +24,7 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="preload" href="assets/polices/orbitron-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=3e622573">
+  <link rel="stylesheet" href="style.css?v=7b2f31ef">
 </head>
 <body>
   <a class="skip" href="#contenu">Aller au contenu</a>
@@ -40,6 +40,7 @@
       <a href="./#commandes">Commandes</a>
       <a href="demarrer">Démarrer</a>
       <a href="nouveautes" aria-current="page">Nouveautés</a>
+      <a href="feedback">Feedback</a>
       <a href="docs/">Docs</a>
       <a href="panel/">Tableau de bord</a>
       <a class="lang" href="en" hreflang="en" lang="en" title="English version">EN</a>
@@ -69,7 +70,17 @@
 
       <div class="timeline">
         <article class="release">
-          <div class="rel-head"><span class="version">v2.0</span><time datetime="2026-11-14">14 novembre 2026</time><span class="rel-tag new">Dernière</span></div>
+          <div class="rel-head"><span class="version">v2.1</span><time datetime="2026-11-14">14 novembre 2026</time><span class="rel-tag new">Dernière</span></div>
+          <h2>Feedback, images et panneaux bilingues</h2>
+          <ul>
+            <li><b>Nouvel onglet <a href="feedback">Feedback</a></b> : un avis, une idée ou un bug, avec jusqu'à 3 images. Le message arrive directement à l'équipe de Cyber. Connecté au tableau de bord ? Ton compte Discord est ajouté tout seul.</li>
+            <li><b>Images dans les demandes de modules</b> : sur le site, dans le tableau de bord et dans <code>/requestmodule</code>. Les informations cachées des photos (position GPS…) sont retirées.</li>
+            <li><b>Panneau de tickets en français, en anglais ou les deux</b> : à choisir dans le tableau de bord avant d'envoyer. « Les deux » ajoute un bouton « English » qui traduit le panneau sur place pour tout le monde, avec ta propre version anglaise si tu veux.</li>
+          </ul>
+        </article>
+
+        <article class="release">
+          <div class="rel-head"><span class="version">v2.0</span><time datetime="2026-11-14">14 novembre 2026</time></div>
           <h2>Modules sur mesure</h2>
           <ul>
             <li><b>Modules sur mesure ouverts</b> : une fonction codée exprès pour ton serveur, installée avec un code unique (<code>CYB-XXXX-XXXX-XXXX</code>) dans <b>Modules publics</b> → « Code de module », ou avec <code>/modules code:</code>.</li>
@@ -236,6 +247,7 @@
         <a href="./#commandes">Commandes</a>
         <a href="nouveautes">Nouveautés et statut</a>
         <a href="modules">Modules sur mesure</a>
+        <a href="feedback">Donner mon avis</a>
         <a href="panel/">Tableau de bord</a>
         <a href="docs/">Documentation</a>
         <a href="https://discord.gg/erqHM5s8Vz" target="_blank" rel="noopener">Serveur de support</a>
@@ -252,7 +264,7 @@
   </footer>
 
   <script src="config.js?v=a596832e"></script>
-  <script src="js/icones.js?v=94cd5acc"></script>
+  <script src="js/icones.js?v=0a55d12d"></script>
   <script src="js/commun.js?v=b4479c25"></script>
   <script src="js/liste-commandes.js?v=d4c31d49"></script>
   <script src="js/effets.js?v=6880e65e"></script>
@@ -261,6 +273,8 @@
   <script src="js/fond.js?v=d61157d8"></script>
   <script src="js/demo.js?v=8cc500af"></script>
   <script src="js/visite.js?v=d9acf2ff"></script>
-  <script src="js/demande.js?v=35e28925"></script>
+  <script src="js/formulaires.js?v=9fcc40b6"></script>
+  <script src="js/demande.js?v=73caade5"></script>
+  <script src="js/feedback.js?v=f345ab81"></script>
 </body>
 </html>
