@@ -528,9 +528,9 @@ figure.browser { margin: 0; }
 .erreur-404 h1.glitch { font-size: clamp(4rem, 18vw, 8rem); margin: 10px 0; }
 .erreur-404 .term { width: min(420px, 100%); text-align: left; margin-top: 10px; }
 .erreur-404 .muted-s { margin-top: 22px; }
-/* Le menu a plus de liens : il passe en menu (trois traits) dès 1120 px pour ne jamais couper « Tableau de bord » sur deux lignes */
-.links a { white-space: nowrap; }
-@media (max-width: 1120px) {
+/* Le menu a plus de liens : il passe en menu (trois traits) dès 1280 px pour ne jamais couper « Tableau de bord » sur deux lignes */
+.links a, .links .pill { white-space: nowrap; }
+@media (max-width: 1280px) {
   .menu-btn { display: block; }
   .links {
     position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; align-items: stretch;
@@ -647,4 +647,31 @@ figure.browser { margin: 0; }
 .demande-etat { margin: 0; font-weight: 600; }
 .demande-etat.ok { color: var(--ok); }
 .demande-etat.ko { color: var(--red2); }
+.demande [hidden] { display: none !important; }
+.demande .etiquette { font-weight: 600; }
+.demande .btn.ghost { border: 1px solid var(--blanc-26); cursor: pointer; justify-self: start; display: inline-flex; align-items: center; gap: 8px; }
+.demande .btn.ghost:disabled { opacity: .5; cursor: not-allowed; }
+/* Images jointes : vignettes avec un bouton pour retirer */
+.images-choix { display: grid; gap: 12px; }
+.images-vignettes { display: flex; flex-wrap: wrap; gap: 10px; }
+.images-vignettes:empty { display: none; }
+.images-vignette { position: relative; width: 104px; height: 104px; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: var(--bg); }
+.images-vignette img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.images-retirer { position: absolute; top: 6px; right: 6px; width: 28px; height: 28px; display: grid; place-items: center; border: 0; border-radius: 50%; background: #000c; color: #fff; cursor: pointer; }
+.images-retirer:hover, .images-retirer:focus-visible { background: var(--red); }
+.images-retirer .i { width: 15px; height: 15px; }
+/* Type de feedback : 4 pastilles à choisir */
+.demande .types { border: 0; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.demande .types legend { font-weight: 600; margin-bottom: 10px; padding: 0; }
+.demande .type { position: relative; display: inline-flex; font-weight: 500; cursor: pointer; }
+.demande .type input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; z-index: 1; }
+.demande .type span { display: inline-flex; align-items: center; gap: 8px; padding: 9px 15px; border: 1px solid var(--line); border-radius: 999px; background: var(--bg); color: var(--mut); transition: border-color .2s, color .2s, background .2s; }
+.demande .type input:checked + span { border-color: var(--red); color: var(--txt); background: var(--red-soft); }
+.demande .type input:focus-visible + span { box-shadow: 0 0 0 3px var(--red-soft); }
+/* Qui envoie : connecté (vérifié) ou pseudo/identifiant donnés à la main */
+.identite { display: grid; gap: 12px; }
+.identite-aide { margin: 0 0 12px; color: var(--mut); font-size: .92rem; }
+.identite-connecte { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); color: var(--mut); }
+.identite-connecte b { color: var(--txt); }
+.identite-connecte .i { color: var(--ok); flex: none; }
 @media (max-width: 640px) { .demande { padding: 18px; } .demande .champs-2 { grid-template-columns: 1fr; } }
