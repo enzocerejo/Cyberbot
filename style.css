@@ -114,7 +114,6 @@ a:hover { text-decoration: underline; }
 img { max-width: 100%; display: block; }
 code { background: var(--blanc-12); padding: 1px 6px; border-radius: 5px; font-family: ui-monospace, "Cascadia Code", Consolas, monospace; font-size: .92em; }
 ::selection { background: var(--red); color: var(--blanc); }
-.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 .skip { position: absolute; left: 12px; top: -60px; z-index: 50; background: var(--red); color: var(--blanc); padding: 8px 14px; border-radius: 8px; }
 .skip:focus { top: 12px; }
 :focus-visible { outline: 2px solid var(--red2); outline-offset: 3px; border-radius: 6px; }
@@ -307,8 +306,6 @@ body { background: radial-gradient(1200px 700px at 75% -10%, var(--halo-haut), t
 .checks { list-style: none; padding: 0; margin: 0; }
 .checks li { padding: 6px 0 6px 30px; position: relative; }
 .checks li::before { content: "✓"; position: absolute; left: 0; color: var(--red); font-weight: 800; }
-.shot { width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); box-shadow: 0 20px 60px var(--noir-aa), 0 0 60px var(--red-soft); transition: transform .4s; }
-.shot:hover { transform: perspective(1000px) rotateY(-3deg) scale(1.02); }
 
 /* ---------- FAQ ---------- */
 .faq { max-width: 780px; margin: 0 auto; display: grid; gap: 10px; }
@@ -414,7 +411,6 @@ body { background: radial-gradient(1200px 700px at 75% -10%, var(--halo-haut), t
 .bento .big { grid-column: span 2; grid-row: span 2; display: flex; flex-direction: column; }
 .bento .big h3 { font-size: 1.5rem; }
 .bento .tall { grid-row: span 2; }
-.bento .wide { grid-column: span 2; }
 .term { margin-top: auto; padding-top: 16px; font-family: ui-monospace, "Cascadia Code", Consolas, monospace; font-size: .85rem; }
 .term > div { background: var(--bg-cc); border: 1px solid var(--line); padding: 8px 12px; color: var(--txt); overflow-wrap: anywhere; }
 .term > div:first-child { border-radius: 9px 9px 0 0; border-bottom: 0; }
@@ -462,7 +458,7 @@ body { background: radial-gradient(1200px 700px at 75% -10%, var(--halo-haut), t
 }
 @media (max-width: 600px) {
   .bento { grid-template-columns: minmax(0, 1fr); }
-  .bento .big, .bento .wide, .bento .tall { grid-column: auto; grid-row: auto; }
+  .bento .big, .bento .tall { grid-column: auto; grid-row: auto; }
   .demo-feed { height: 340px; }
   .counters { gap: 18px; }
 }
@@ -470,7 +466,6 @@ body { background: radial-gradient(1200px 700px at 75% -10%, var(--halo-haut), t
 /* ---------- Animations ---------- */
 @keyframes pulse { 0%, 100% { box-shadow: 0 0 10px var(--red-55); } 50% { box-shadow: 0 0 22px var(--red-aa); } }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-@keyframes glow { 0%, 100% { box-shadow: 0 0 60px var(--red-2a); } 50% { box-shadow: 0 0 100px var(--red-55); } }
 @keyframes ping { 0% { box-shadow: 0 0 0 0 var(--ok-99); } 70% { box-shadow: 0 0 0 8px var(--ok-00); } 100% { box-shadow: 0 0 0 0 var(--ok-00); } }
 @keyframes appear { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s, transform .6s; }
