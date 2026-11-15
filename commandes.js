@@ -96,8 +96,8 @@ window.CYBER_COMMANDES = [
    },
    {
     "name": "poll",
-    "desc": "Crée un sondage avec réactions",
-    "descEn": "Create a poll with reactions",
+    "desc": "Crée un sondage avec des boutons (résultats en direct)",
+    "descEn": "Create a poll with buttons (live results)",
     "subs": [],
     "staff": false
    },
