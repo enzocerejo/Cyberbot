@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; font-src 'self'; style-src 'self'; script-src 'self'; connect-src https://discord.com https://panel.cyberbot.fr; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Privacy policy · Cyber</title>
+  <meta name="description" content="How Cyber handles personal data.">
+  <meta name="theme-color" content="#ff3d5a">
+  <link rel="canonical" href="https://cyberbot.fr/en/privacy">
+  <link rel="alternate" hreflang="fr" href="https://cyberbot.fr/confidentialite">
+  <link rel="alternate" hreflang="en" href="https://cyberbot.fr/en/privacy">
+  <link rel="alternate" hreflang="x-default" href="https://cyberbot.fr/confidentialite">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Cyber">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://cyberbot.fr/en/privacy">
+  <meta property="og:title" content="Privacy policy · Cyber">
+  <meta property="og:description" content="How Cyber handles personal data.">
+  <meta property="og:image" content="https://cyberbot.fr/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Cyber, Discord bot">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="preload" href="../assets/polices/orbitron-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../style.css?v=7b2f31ef">
+</head>
+<body>
+  <a class="skip" href="#contenu">Skip to content</a>
+  <canvas id="reseau" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="brand" href="./"><img src="../assets/logo.webp" alt="" width="38" height="38"><span>CYBER</span></a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></button>
+    <nav class="links" aria-label="Main navigation">
+      <a href="./#features">Features</a>
+      <a href="./#modules">Modules</a>
+      <a href="./#commands">Commands</a>
+      <a href="start">Get started</a>
+      <a href="changelog">Changelog</a>
+      <a href="feedback">Feedback</a>
+      <a href="../docs/" hreflang="fr">Docs</a>
+      <a href="../panel/">Dashboard</a>
+      <a class="lang" href="../confidentialite" hreflang="fr" lang="fr" title="Version française">FR</a>
+      <span class="pill" data-statut title="Cyber status"><span class="dot-status"></span><span class="pill-txt">Status</span></span>
+      <a class="btn small" href="https://discord.com/oauth2/authorize?client_id=1563977964616421376&amp;permissions=282884146850902&amp;scope=bot+applications.commands" target="_blank" rel="noopener">Add Cyber</a>
+    </nav>
+  </header>
+
+  <main id="contenu">
+    <section class="page-hero">
+      <span class="badge">Legal</span>
+      <h1>Privacy policy</h1>
+      <p class="lead">Last updated: November 14, 2026</p>
+    </section>
+
+    <section class="section narrow legal">
+      <div class="note">This is a translation provided for convenience. If the two versions differ, the <a href="../confidentialite" hreflang="fr" lang="fr">French version</a> prevails.</div>
+
+      <article>
+        <h2>In short</h2>
+        <ul>
+          <li>Cyber keeps only what it needs to work: Discord IDs, your XP, server settings. <strong>Never the content of your messages</strong>.</li>
+          <li>Nothing is sold, shared for advertising or used to train an AI.</li>
+          <li>You can see and erase your data yourself, at any time, with <code>/mydata</code>.</li>
+          <li>When Cyber is removed from a server, all of that server's data is erased after 30 days.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h2>1. Data controller</h2>
+        <p>Cyber is a personal, non-commercial project, developed and hosted by <a href="https://enzocerejo.fr" target="_blank" rel="noopener">Enzo Cerejo</a>, in France ("the developer"). Contact: <a href="https://discord.gg/erqHM5s8Vz" target="_blank" rel="noopener">Discord support server</a>. See also the <a href="legal-notice">legal notice</a>.</p>
+        <p>The administrators of each server choose which features are turned on (log channel, automatic moderation, tickets…) and must tell their members about them, for example in the server rules.</p>
+      </article>
+
+      <article>
+        <h2>2. Data stored by the bot</h2>
+        <ul>
+          <li><strong>Discord IDs</strong> (numbers) of the servers, channels, roles and users involved;</li>
+          <li><strong>Levels</strong>: XP, message count and time of the last message counted, per member and per server;</li>
+          <li><strong>Academy</strong>: points, correct answers and quiz streaks, the current daily quiz game (answers, score, start and end time, for the daily leaderboard);</li>
+          <li><strong>Moderation</strong>: warnings (reason, moderator, date);</li>
+          <li><strong>Server configuration</strong>: channels, roles, automod settings, banned words, tags (text, author), server language, English or bilingual channels, installed modules and the rating given to each module (one rating per server, with no member name);</li>
+          <li><strong>Bilingual channels</strong>: the text of the automatic messages Cyber posts in those channels (welcome, levels…), kept for 30 days at most so the FR/EN button can translate them again;</li>
+          <li><strong>Features you choose to use</strong>: AFK status (reason, date), reminders (text, date, channel), giveaway entries, open tickets and temporary voice channels, the language chosen with <code>/language</code> (French or English).</li>
+        </ul>
+      </article>
+
+      <article>
+        <h2>3. Message content</h2>
+        <p>Cyber reads messages on the servers where it is installed (Discord's "Message Content" permission) only for automatic moderation (links, banned words, spam, caps) and to award XP. This content is <strong>never stored</strong> by Cyber.</p>
+        <p>If an administrator has set up a log channel, the content of deleted or edited messages is posted there, and a ticket's transcript is sent there when it is closed: those messages then stay on Discord, under the control of the server's administrators. The last deleted message of each channel is kept in memory for the <code>/snipe</code> command and disappears when the bot restarts.</p>
+      </article>
+
+      <article>
+        <h2>4. AI assistant (<code>/ai</code>)</h2>
+        <p>When you use <code>/ai</code>, only the text of your question is sent to the <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic</a> API (United States), which generates the answer. Neither your username nor your ID is sent. The question and the answer are posted in the channel. Cyber does not store them; it only keeps in memory the time of your questions to apply the limits (5 per hour), for 24 hours at most.</p>
+        <p>Anthropic does not use these exchanges to train its models and deletes them within 30 days, unless they break its usage policy (up to 2 years). <strong>Do not write personal information in your questions.</strong> Answers are generated automatically and may contain mistakes.</p>
+      </article>
+
+      <article>
+        <h2>5. Dashboard</h2>
+        <p>You log in with Discord (OAuth2), with only the "identify" and "guilds" permissions. Cyber receives your ID, username, avatar and the list of your servers, only to show the ones you can manage. This information is kept for the length of your session (7 days at most), so you stay logged in even if Cyber restarts, and is then erased. The login cookie is only stored as a hash (unreadable) and no Discord token is kept. You can log out at any time, and <code>/mydata clear</code> also closes your sessions. A single technical cookie, required to log in, is used: there is no advertising cookie and no audience measurement, so no cookie banner.</p>
+        <p>The online dashboard goes through a <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare</a> tunnel, which processes technical connection data (IP address) for routing and security.</p>
+      </article>
+
+      <article>
+        <h2>6. This website</h2>
+        <p>This website is hosted by GitHub Pages (GitHub, Inc.), which may record technical connection data (such as the IP address) for security reasons. Fonts are hosted on the site itself: no data is sent to a font, advertising or analytics service. The status indicator queries Cyber's dashboard (panel.cyberbot.fr/statut), which only answers whether the bot is online and how many servers and members it has in total: no personal data is sent or received.</p>
+        <p><strong>Custom module requests</strong>: when you send a request (form on the <a href="modules">Custom modules</a> page, dashboard or <code>/requestmodule</code>), its content, the images you add, your Discord username (and your ID if you go through Discord or the dashboard, or if you are logged in to the dashboard) and the server you name are posted in a <strong>private</strong> channel of Cyber's Discord server, read only by the team, so we can answer you. Cyber does not keep them anywhere else. Your IP address is only used, in memory and for one hour, to limit the number of requests.</p>
+        <p><strong>Feedback</strong>: when you send a message from the <a href="feedback">Feedback</a> page, its type (opinion, idea, bug…), its text, the images you add and your Discord username and/or ID are posted in a <strong>private</strong> channel of Cyber's Discord server, read only by the team, to read your feedback and be able to answer you. If you are logged in to the dashboard in the same browser, your Discord username and ID are added automatically (the site asks the dashboard who is logged in, without storing anything). Cyber does not keep these messages anywhere else. Your IP address is only used, in memory and for one hour, to limit the number of messages.</p>
+        <p><strong>Images</strong> (requests and feedback): 3 at most, in PNG, JPEG, GIF or WebP format. They are redrawn in your browser before being sent, then the bot removes any hidden information they might still contain (GPS location, camera, date: EXIF and XMP data). Do not include visible personal information in them (address, someone else's face…).</p>
+      </article>
+
+      <article>
+        <h2>7. Why (legal bases)</h2>
+        <ul>
+          <li><strong>Providing the service you use</strong> (reminders, AFK, quizzes, <code>/ai</code>, dashboard): performance of the requested service (art. 6.1.b GDPR);</li>
+          <li><strong>Running the servers</strong> (levels, moderation, logs, anti-raid security): legitimate interest of the administrators and the developer in offering a safe and lively community (art. 6.1.f GDPR).</li>
+        </ul>
+        <p>The data is only used to run Cyber. It is never sold, rented or passed on to data brokers or advertising networks, nor used for profiling or to train an AI model.</p>
+      </article>
+
+      <article>
+        <h2>8. Who receives the data</h2>
+        <ul>
+          <li><a href="https://discord.com/privacy" target="_blank" rel="noopener">Discord</a>, the platform Cyber runs on;</li>
+          <li>Anthropic, only for questions asked to <code>/ai</code>;</li>
+          <li>Cloudflare and GitHub, for routing the dashboard and hosting this website.</li>
+        </ul>
+        <p>These providers are based in the United States. Transfers outside the European Union are covered by the safeguards provided by the GDPR (European Commission standard contractual clauses or the EU–US Data Privacy Framework).</p>
+      </article>
+
+      <article>
+        <h2>9. Storage, security and retention</h2>
+        <p>The bot's data is stored on a personal machine of the developer, in France, accessible to him alone. The dashboard is never exposed without encryption (HTTPS) and checks live that you have the "Manage Server" permission.</p>
+        <ul>
+          <li><strong>Configuration, levels, scores, warnings, tags</strong>: as long as Cyber is on the server. Erased automatically <strong>30 days after the bot is removed</strong> (so it can be invited again without losing everything);</li>
+          <li><strong>AFK status</strong>: until your next message;</li>
+          <li><strong>Chosen language</strong>: until you change it (<code>/language choice:serveur</code>) or use <code>/mydata clear</code>;</li>
+          <li><strong>Reminders</strong>: until they are sent;</li>
+          <li><strong>Bilingual channel messages</strong>: 30 days at most (200 messages per server at most);</li>
+          <li><strong>Giveaways</strong>: 30 days after they end (adjustable by the server from 1 to 365 days);</li>
+          <li><strong>Tickets and temporary voice channels</strong>: until they are closed;</li>
+          <li><strong>Module requests and feedback</strong> (with their images): automatically deleted from the channel after <strong>1 year</strong>; you can ask for them to be deleted sooner, at any time, on the support server;</li>
+          <li><strong>Panels published in "French + English"</strong> from the dashboard: their text is kept as long as the panel exists (50 per server at most), so the language button keeps working;</li>
+          <li><strong>Security backups</strong>: one copy per day, kept for <strong>7 days</strong> and then deleted. Erased data therefore also disappears from the backups within 7 days.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h2>10. Your rights</h2>
+        <p>Under the GDPR, you can access your data, have it corrected or erased, object to its processing, ask for it to be restricted or get it in a readable format.</p>
+        <ul>
+          <li><code>/mydata show</code>: receive privately a file with everything Cyber keeps about you;</li>
+          <li><code>/mydata clear</code>: immediately erases your levels, scores, AFK status, reminders, chosen language and giveaway entries, on every server;</li>
+          <li>warnings are handled by each server's moderators (<code>/warn clear</code>); administrators can also reset XP (<code>/xp reset</code>) or erase all of a server's data by removing Cyber;</li>
+          <li>for any other request, contact the developer on the <a href="https://discord.gg/erqHM5s8Vz" target="_blank" rel="noopener">support server</a> with your Discord ID. You will get an answer within one month at most.</li>
+        </ul>
+        <p>If you believe your rights are not respected, you can file a complaint with the <a href="https://www.cnil.fr/en/" target="_blank" rel="noopener">CNIL</a> (French data protection authority).</p>
+      </article>
+
+      <article>
+        <h2>11. Minimum age</h2>
+        <p>Cyber is meant for people old enough to use Discord in their country (13 at the very least). It contains no adult-only content.</p>
+      </article>
+
+      <article>
+        <h2>12. Changes</h2>
+        <p>This policy may change; the date at the top of the page shows the latest version. Any major change will be announced on the support server and on the <a href="changelog">Changelog</a> page.</p>
+      </article>
+    </section>
+  </main>
+
+
+  <footer class="footer">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="./"><img src="../assets/logo.webp" alt="" width="34" height="34" loading="lazy"><span>CYBER</span></a>
+        <p>Protects and brings your Discord server to life. 100% free.</p>
+      </div>
+      <div>
+        <h3>Cyber</h3>
+        <a href="https://discord.com/oauth2/authorize?client_id=1563977964616421376&amp;permissions=282884146850902&amp;scope=bot+applications.commands" target="_blank" rel="noopener">Add to Discord</a>
+        <a href="start">Get started</a>
+        <a href="./#commands">Commands</a>
+        <a href="changelog">Changelog and status</a>
+        <a href="modules">Custom modules</a>
+        <a href="feedback">Feedback</a>
+        <a href="../panel/">Dashboard</a>
+        <a href="../docs/" hreflang="fr">Documentation (FR)</a>
+        <a href="https://discord.gg/erqHM5s8Vz" target="_blank" rel="noopener">Support server</a>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <a href="terms">Terms of service</a>
+        <a href="privacy">Privacy policy</a>
+        <a href="legal-notice">Legal notice</a>
+        <a href="../confidentialite" hreflang="fr" lang="fr" data-langue>Version française</a>
+      </div>
+    </div>
+    <p class="foot-bottom">© <span data-annee>2026</span> Cyber · Made by <a href="https://enzocerejo.fr" target="_blank" rel="noopener">Enzo Cerejo</a> · Cyber is not affiliated with Discord Inc.</p>
+  </footer>
+
+  <script src="../config.js?v=a596832e"></script>
+  <script src="../js/icones.js?v=0a55d12d"></script>
+  <script src="../js/commun.js?v=025daa71"></script>
+  <script src="../js/liste-commandes.js?v=6fa5b8f1"></script>
+  <script src="../js/effets.js?v=6880e65e"></script>
+  <script src="../js/statut.js?v=3569bb04"></script>
+  <script src="../js/captures.js?v=7347b495"></script>
+  <script src="../js/fond.js?v=d61157d8"></script>
+  <script src="../js/demo.js?v=73eedd68"></script>
+  <script src="../js/visite.js?v=d9acf2ff"></script>
+  <script src="../js/formulaires.js?v=eecdfb6c"></script>
+  <script src="../js/demande.js?v=d4cf5a5a"></script>
+  <script src="../js/feedback.js?v=bfcdf78f"></script>
+</body>
+</html>

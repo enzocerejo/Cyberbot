@@ -12,7 +12,7 @@
   function ajouter(auteur, contenu, opts = {}) {
     const m = el('div', 'msg');
     const av = el('div', 'av');
-    if (auteur === 'Cyber') { const i = el('img'); i.src = 'assets/logo.webp'; i.alt = ''; av.append(i); }
+    if (auteur === 'Cyber') { const i = el('img'); i.src = '/assets/logo.webp'; i.alt = ''; av.append(i); }
     else { av.textContent = auteur[0]; av.style.background = COULEURS[auteur] || '#4e5058'; }
     const corps = el('div');
     const who = el('div', 'who', auteur);
@@ -70,15 +70,14 @@
       spam.remove();
     },
     async () => {
-      await taper('/rang');
-      ajouter('Enzo', '/rang', { cmd: true });
+      await taper('/rank');
+      ajouter('Enzo', '/rank', { cmd: true });
       await pause(600);
       const bar = el('div', 'bar'); const fill = el('span'); bar.append(fill);
       ajouter('Cyber', null, { embed: embed(['courbe', 'Rang de Enzo'], [['Niveau ', el('b', null, '12'), ' · Classement ', el('b', null, '#3')], ['1 840 / 2 400 XP']], bar) });
       await pause(80); fill.style.width = '77%';
     },
     async () => {
-      await taper('/ticket ouvrir');
       ajouter('Maya', 'Ouvrir un ticket');
       await pause(600);
       const b = el('span', 'btn-d');
@@ -86,8 +85,8 @@
       ajouter('Cyber', null, { embed: embed(['ticket', 'Ticket ouvert'], [['Ton ticket est prêt : ', el('b', null, '#ticket-0042')], ['L\'équipe va te répondre.']], b) });
     },
     async () => {
-      await taper('/sousreseau 10.0.0.0/26');
-      ajouter('Enzo', '/sousreseau 10.0.0.0/26', { cmd: true });
+      await taper('/subnet 10.0.0.0/26');
+      ajouter('Enzo', '/subnet 10.0.0.0/26', { cmd: true });
       await pause(600);
       ajouter('Cyber', null, { embed: embed(['reseau', '10.0.0.0/26'], [['Masque ', el('b', null, '255.255.255.192')], ['Broadcast ', el('b', null, '10.0.0.63'), ' · ', el('b', null, '62'), ' hôtes']]) });
     },

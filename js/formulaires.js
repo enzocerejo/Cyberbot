@@ -13,7 +13,7 @@ function envoyerAuBot(chemin, corps) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     credentials: 'include',
-    body: JSON.stringify(corps),
+    body: JSON.stringify({ ...corps, langue: SITE_EN ? 'en' : 'fr' }), // erreurs du bot dans la langue de la page
   });
 }
 
@@ -42,18 +42,18 @@ function lireDataUrl(blob) {
   return new Promise((ok, ko) => {
     const r = new FileReader();
     r.onload = () => ok(r.result);
-    r.onerror = () => ko(new Error('Image illisible.'));
+    r.onerror = () => ko(new Error(tr('Image illisible.', 'Unreadable image.')));
     r.readAsDataURL(blob);
   });
 }
 async function preparerImage(fichier) {
-  if (!/^image\/(png|jpeg|gif|webp)$/.test(fichier.type)) throw new Error('Seules les images PNG, JPEG, GIF et WebP sont acceptées.');
+  if (!/^image\/(png|jpeg|gif|webp)$/.test(fichier.type)) throw new Error(tr('Seules les images PNG, JPEG, GIF et WebP sont acceptées.', 'Only PNG, JPEG, GIF and WebP images are accepted.'));
   if (fichier.type === 'image/gif') {
-    if (fichier.size > IMAGE_OCTETS) throw new Error('Chaque image fait 4 Mo au plus.');
+    if (fichier.size > IMAGE_OCTETS) throw new Error(tr('Chaque image fait 4 Mo au plus.', 'Each image is 4 MB at most.'));
     return lireDataUrl(fichier);
   }
   let bmp;
-  try { bmp = await createImageBitmap(fichier); } catch { throw new Error('Image illisible.'); }
+  try { bmp = await createImageBitmap(fichier); } catch { throw new Error(tr('Image illisible.', 'Unreadable image.')); }
   const echelle = Math.min(1, 2000 / Math.max(bmp.width, bmp.height));
   const toile = document.createElement('canvas');
   toile.width = Math.round(bmp.width * echelle);
@@ -63,7 +63,7 @@ async function preparerImage(fichier) {
   const versBlob = (type, q) => new Promise((ok) => toile.toBlob(ok, type, q));
   let blob = await versBlob('image/webp', 0.9);
   if (!blob || blob.type !== 'image/webp' || blob.size > IMAGE_OCTETS) blob = await versBlob('image/jpeg', 0.85);
-  if (!blob || blob.size > IMAGE_OCTETS) throw new Error('Chaque image fait 4 Mo au plus.');
+  if (!blob || blob.size > IMAGE_OCTETS) throw new Error(tr('Chaque image fait 4 Mo au plus.', 'Each image is 4 MB at most.'));
   return lireDataUrl(blob);
 }
 
@@ -82,8 +82,8 @@ function choixImages(bloc, dire) {
       img.alt = `Image ${i + 1}`;
       const retirer = el('button', 'images-retirer');
       retirer.type = 'button';
-      retirer.title = 'Retirer l’image';
-      retirer.setAttribute('aria-label', `Retirer l’image ${i + 1}`);
+      retirer.title = tr('Retirer l’image', 'Remove the image');
+      retirer.setAttribute('aria-label', tr(`Retirer l’image ${i + 1}`, `Remove image ${i + 1}`));
       retirer.append(icone('fermer'));
       retirer.addEventListener('click', () => { images.splice(i, 1); dessiner(); });
       v.append(img, retirer);
@@ -95,7 +95,7 @@ function choixImages(bloc, dire) {
   entree.addEventListener('change', async () => {
     const fichiers = [...entree.files];
     entree.value = '';
-    if (fichiers.length > IMAGES_MAX - images.length) dire(`${IMAGES_MAX} images au plus.`, false);
+    if (fichiers.length > IMAGES_MAX - images.length) dire(tr(`${IMAGES_MAX} images au plus.`, `${IMAGES_MAX} images at most.`), false);
     for (const f of fichiers.slice(0, IMAGES_MAX - images.length)) {
       try { images.push(await preparerImage(f)); } catch (err) { dire(err.message, false); }
     }
@@ -114,6 +114,9 @@ document.querySelectorAll('[data-compteur]').forEach((c) => {
 });
 
 // Message d'état sous un formulaire (vert : ok, rouge : erreur)
+// Erreurs générales du bot (requête refusée avant de lire la langue) : traduites ici pour la version anglaise
+const ERREURS_EN = { 'Requête trop grosse': 'Request too large (images too heavy?)', 'Requête invalide': 'Invalid request', 'Erreur interne': 'Internal error', 'Introuvable': 'Not found' };
+const erreurBot = (texte) => (SITE_EN && ERREURS_EN[texte]) || texte;
 const etatFormulaire = (noeud) => (texte, ok) => {
   noeud.textContent = texte;
   noeud.className = `demande-etat ${ok ? 'ok' : 'ko'}`;
