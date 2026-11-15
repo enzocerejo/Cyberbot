@@ -4,8 +4,8 @@ const capture = document.querySelector('#capture img');
 document.querySelectorAll('[data-capture]').forEach((btn, i, tous) => {
   btn.addEventListener('click', () => {
     tous.forEach((b) => { b.classList.toggle('active', b === btn); b.setAttribute('aria-selected', String(b === btn)); });
-    const src = `assets/captures/${btn.dataset.capture}.webp`;
-    if (capture.getAttribute('src') === src) return;
+    const src = `/assets/captures/${btn.dataset.capture}.webp`;
+    if (new URL(capture.src, location.href).pathname === src) return;
     capture.classList.add('change');
     const img = new Image();
     img.onload = img.onerror = () => { capture.src = src; capture.alt = btn.dataset.alt; capture.classList.remove('change'); };

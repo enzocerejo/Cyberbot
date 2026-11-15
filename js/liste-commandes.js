@@ -12,6 +12,8 @@ if (data && $('#liste')) {
   // Icône de chaque catégorie (à la place de l'emoji du bot) ; une catégorie inconnue (module sur mesure) prend « module »
   const ICONE_CAT = { utilitaires: 'mallette', academie: 'diplome', reseau: 'reseau', niveaux: 'courbe', systemes: 'reglages', moderation: 'bouclier', roles: 'etiquette', fun: 'de', admin: 'outil' };
   const iconeCat = (id) => icone(ICONE_CAT[id] || 'module');
+  // Description dans la langue de la page (descEn : version anglaise, pour cyberbot.fr/en/)
+  const description = (c) => (SITE_EN && c.descEn) || c.desc;
 
   const boutonCat = (id, label, n) => {
     const b = el('button', `cat${id === categorie ? ' active' : ''}`);
@@ -25,14 +27,14 @@ if (data && $('#liste')) {
   };
 
   function afficher() {
-    $cats.replaceChildren(boutonCat('toutes', 'Toutes', total), ...data.map((c) => boutonCat(c.id, c.label, c.commands.length)));
+    $cats.replaceChildren(boutonCat('toutes', tr('Toutes', 'All'), total), ...data.map((c) => boutonCat(c.id, SITE_EN ? c.labelEn || c.label : c.label, c.commands.length)));
     const q = $recherche.value.trim().toLowerCase().replace(/^\//, '');
     const cmds = data
       .filter((c) => categorie === 'toutes' || c.id === categorie)
-      .flatMap((c) => c.commands.map((cmd) => ({ ...cmd, cat: c.id })))
+      .flatMap((c) => c.commands.map((cmd) => ({ ...cmd, cat: c.id, desc: description(cmd) })))
       .filter((cmd) => !q || cmd.name.includes(q) || cmd.desc.toLowerCase().includes(q) || cmd.subs.some((s) => s.name.includes(q)));
 
-    if (!cmds.length) { $liste.replaceChildren(el('p', 'vide', 'Aucune commande trouvée.')); return; }
+    if (!cmds.length) { $liste.replaceChildren(el('p', 'vide', tr('Aucune commande trouvée.', 'No command found.'))); return; }
     $liste.replaceChildren(...cmds.map((cmd, i) => {
       const card = el('article', 'cmd');
       card.style.animationDelay = `${Math.min(i, 20) * 15}ms`;
@@ -42,7 +44,7 @@ if (data && $('#liste')) {
       card.append(head, el('p', null, cmd.desc));
       if (cmd.subs.length) {
         const subs = el('div', 'subs');
-        subs.append(...cmd.subs.map((s) => { const t = el('span', null, s.name); t.title = s.desc; return t; }));
+        subs.append(...cmd.subs.map((s) => { const t = el('span', null, s.name); t.title = description(s); return t; }));
         card.append(subs);
       }
       return card;
