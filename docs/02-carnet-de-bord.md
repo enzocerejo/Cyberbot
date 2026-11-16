@@ -303,7 +303,7 @@ Tout commence dans une première conversation avec Claude, intitulée « Bot Dis
 
 Une longue liste d'un coup, avec un mot d'ordre : « vérifie aussi toute la cohérence affichée sur le dashboard ainsi que sur le site ».
 
-- 🧩 **L'Académie devient un module en plus**, « fait par passion », et n'est plus proposée à l'arrivée. Communauté + Sécurité sont actifs tout de suite. Le site gagne une **visite guidée animée** (Communauté → Sécurité → Modules) et une section **Modules**.
+- 🧩 **L'Académie devient un module en plus**, né d'une affinité pour l'infra réseau, et n'est plus proposée à l'arrivée. Communauté + Sécurité sont actifs tout de suite. Le site gagne une **visite guidée animée** (Communauté → Sécurité → Modules) et une section **Modules**.
 - 🌐 **Commandes en anglais pour tout le monde** (`/help`, `/learn`…), c'est plus standard. Et la **langue par salon** : un serveur peut parler français dans certains salons et anglais dans d'autres.
 - 🗂️ Panel : les **sous-rubriques** de chaque onglet s'affichent dans le menu pour y aller directement, les modules sont rangés tout en haut dans un menu déroulant, et **Modules publics** sépare les modules installés de la recherche (les plus installés, les mieux notés, par nom ou par identifiant).
 - 📊 Page « Choisir un serveur » plus détaillée et **boosts** dans l'aperçu.
@@ -311,7 +311,7 @@ Une longue liste d'un coup, avec un mot d'ordre : « vérifie aussi toute la coh
 
 Le lendemain matin, une deuxième vague :
 
-- 🎓 « Il faut arrêter de parler du module Académie comme un module du bot par défaut. » Elle devient un petit module optionnel, fait par passion pour l'infra réseau : plus dans la bio ni dans l'accueil, et ses commandes n'apparaissent même plus dans le menu « / » des serveurs qui ne l'ont pas installée.
+- 🎓 « Il faut arrêter de parler du module Académie comme un module du bot par défaut. » Elle devient un petit module optionnel, né d'un élan vers l'infra réseau : plus dans la bio ni dans l'accueil, et ses commandes n'apparaissent même plus dans le menu « / » des serveurs qui ne l'ont pas installée.
 - 🌐 **Salons bilingues** : un bouton 🇬🇧 English / 🇫🇷 Français sous les messages de Cyber, qui change la langue du message sur place.
 
 ⚠️ *Problème* : en passant les noms de commandes en anglais, un texte qui citait plusieurs commandes sur la même ligne ne traduisait que la première. 💡 Corrigé et vérifié sur tous les textes du bot, du panel et du site.
