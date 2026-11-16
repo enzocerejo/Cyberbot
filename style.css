@@ -523,6 +523,11 @@ figure.browser { margin: 0; }
 .erreur-404 h1.glitch { font-size: clamp(4rem, 18vw, 8rem); margin: 10px 0; }
 .erreur-404 .term { width: min(420px, 100%); text-align: left; margin-top: 10px; }
 .erreur-404 .muted-s { margin-top: 22px; }
+/* Écrans moyens (1281 à 1500 px) : liens un peu plus serrés pour que tout tienne sur une ligne à côté du logo */
+@media (min-width: 1281px) and (max-width: 1500px) {
+  .links { gap: 13px; }
+  .links a:not(.btn), .links .pill { font-size: .93rem; }
+}
 /* Le menu a plus de liens : il passe en menu (trois traits) dès 1280 px pour ne jamais couper « Tableau de bord » sur deux lignes */
 .links a, .links .pill { white-space: nowrap; }
 @media (max-width: 1280px) {
