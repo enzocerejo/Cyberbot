@@ -33,7 +33,8 @@ const CYBER_ICONES = {
  "fermer": "<path d=\"M18 6 6 18\"/><path d=\"m6 6 12 12\"/>",
  "message": "<path d=\"M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z\"/>",
  "bug": "<path d=\"m8 2 1.9 1.9\"/><path d=\"M14.1 3.9 16 2\"/><path d=\"M9 7.1V6a3 3 0 1 1 6 0v1.1\"/><path d=\"M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6\"/><path d=\"M12 20v-9\"/><path d=\"M6.5 13H3\"/><path d=\"M21 13h-3.5\"/><path d=\"M6 9 3 7\"/><path d=\"m18 9 3-2\"/><path d=\"m6 17-3 2\"/><path d=\"m18 17 3 2\"/>",
- "utilisateur": "<circle cx=\"12\" cy=\"8\" r=\"4\"/><path d=\"M4 21a8 8 0 0 1 16 0\"/>"
+ "utilisateur": "<circle cx=\"12\" cy=\"8\" r=\"4\"/><path d=\"M4 21a8 8 0 0 1 16 0\"/>",
+ "tri": "<path d=\"m3 16 4 4 4-4\"/><path d=\"M7 20V4\"/><path d=\"m21 8-4-4-4 4\"/><path d=\"M17 4v16\"/>"
 };
 function icone(nom) {
   const s = document.createElementNS('http://www.w3.org/2000/svg', 'svg');

@@ -383,6 +383,12 @@ body { background: radial-gradient(1200px 700px at 75% -10%, var(--halo-haut), t
 .release ul { margin: 0; padding-left: 20px; color: var(--mut); }
 .release li { margin: 4px 0; }
 .release li b { color: var(--txt); }
+/* Petit bouton qui inverse l'ordre (js/tri.js) ; la ligne rouge s'éteint toujours vers le passé */
+.tri-barre { display: flex; justify-content: flex-end; margin: -24px 0 10px; }
+.tri-btn { display: inline-flex; align-items: center; gap: 5px; background: none; border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; color: var(--mut); font: inherit; font-size: .8rem; cursor: pointer; transition: color .2s, border-color .2s; }
+.tri-btn:hover, .tri-btn:focus-visible { color: var(--txt); border-color: var(--red-55); }
+.tri-btn[hidden] { display: none; }
+.timeline.ancien-d-abord::before { background: linear-gradient(var(--red-11), var(--red)); }
 
 /* ---------- Pages légales ---------- */
 .legal article { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 22px; margin-bottom: 14px; backdrop-filter: blur(6px); }
