@@ -22,7 +22,7 @@ Depuis la v1.9, **Communauté + Sécurité** est la base, active dès l'arrivée
 
 **Communauté + Sécurité** : modération, automod, niveaux et XP, tickets, giveaways, vérification anti-raid, suggestions, tags, rôles à boutons, vocaux temporaires, fun et utilitaires.
 
-**Académie**, module optionnel fait par passion (niveau CCNA, cursus ITN / SRWE / ENSA) :
+**Académie**, module optionnel né d'une affinité pour l'infra réseau (niveau CCNA, cursus ITN / SRWE / ENSA) :
 
 - `/apprendre` : 47 fiches de cours détaillées, avec exemples et commandes Cisco ;
 - `/quiz` : 498 questions, séries de 5 par sujet, points, séries de victoires et classement ;

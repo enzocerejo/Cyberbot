@@ -4,7 +4,7 @@
 
 **Cyber** est un bot Discord créé par **Enzo Cerejo**, étudiant en **BTS CIEL** (Cybersécurité, Informatique et réseaux, Électronique), option Informatique et Réseaux. Le projet est né d'un constat simple : sur un serveur Discord, on empile souvent cinq ou six bots différents (un pour les tickets, un pour la modération, un pour les niveaux, un pour les giveaways…). Chacun a ses permissions, son tableau de bord, ses pannes.
 
-L'idée : **un seul bot, gratuit, qui remplace tous les autres**. En plus, un petit module optionnel, l'**Académie**, permet de réviser les réseaux au niveau **CCNA**. Il est né de la passion d'Enzo pour l'infrastructure réseau, en lien avec sa formation.
+L'idée : **un seul bot, gratuit, qui remplace tous les autres**. En plus, un petit module optionnel, l'**Académie**, permet de réviser les réseaux au niveau **CCNA**. Il est né de l'affinité d'Enzo pour l'infrastructure réseau, en lien avec sa formation.
 
 ## Les objectifs fixés
 
@@ -12,7 +12,7 @@ L'idée : **un seul bot, gratuit, qui remplace tous les autres**. En plus, un pe
 |---|---|
 | Tout-en-un | Modération, automod, tickets, niveaux, giveaways, vérification, vocaux temporaires, rôles… |
 | Modulable | Chaque serveur active seulement ce dont il a besoin (base **Communauté + Sécurité**, et des modules à installer comme l'**Académie**) |
-| Pédagogique (en option) | Fiches de cours CCNA, quiz, glossaire, défi du jour, outils réseau, regroupés depuis le 30 octobre dans un module **Académie** optionnel, fait par passion |
+| Pédagogique (en option) | Fiches de cours CCNA, quiz, glossaire, défi du jour, outils réseau, regroupés depuis le 30 octobre dans un module **Académie** optionnel, né d'une affinité pour l'infra réseau |
 | Simple à configurer | Un **panel web** façon MEE6 avec connexion Discord |
 | Sûr | Aucun secret publié, permissions minimales, panel protégé, données personnelles maîtrisées |
 | Professionnel | Site public, nom de domaine, pages légales, identité visuelle, préparation à la vérification Discord |
